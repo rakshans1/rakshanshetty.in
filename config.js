@@ -8,11 +8,11 @@ config = {
         database: {
 		    client: 'postgres',
 		    connection: {
-		          host: process.enc.DATABASE_HOST,
-		          user: process.enc.DATABASE_USER,
-		          password: process.enc.DATABASE_PASSWORD,
-		          database: process.enc.DATABASE_DATABASE,
-		          port: process.enc.DATABASE_PORT
+		          host: process.env.DATABASE_HOST,
+		          user: process.env.DATABASE_USER,
+		          password: process.env.DATABASE_PASSWORD,
+		          database: process.env.DATABASE_DATABASE,
+		          port: process.env.DATABASE_PORT
 		        }
 		    },
 
