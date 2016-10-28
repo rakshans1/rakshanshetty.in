@@ -8,11 +8,11 @@ config = {
         database: {
 		    client: 'postgres',
 		    connection: {
-		          host: 'ec2-54-225-90-198.compute-1.amazonaws.com',
-		          user: 'kfhbfwhumwtgkn',
-		          password: 'GUpQPpfZhv9TQg5tBWY3JpqU8J',
-		          database: 'd9sge3dnme1b4u',
-		          port: '5432'
+		          host: process.enc.DATABASE_HOST,
+		          user: process.enc.DATABASE_USER,
+		          password: process.enc.DATABASE_PASSWORD,
+		          database: process.enc.DATABASE_DATABASE,
+		          port: process.enc.DATABASE_PORT
 		        }
 		    },
 
@@ -25,9 +25,9 @@ config = {
 				    active: 'ghost-cloudinary-store',
 				    'ghost-cloudinary-store': {
 				    		secure: true,
-				        cloud_name: 'hdunvneld',
-				        api_key: '388153881578662',
-				        api_secret: 'oGk1zXCOAKhmab4mxR30BHoRx4c'
+				        cloud_name: process.env.CLOUDINARY_NAME,
+				        api_key: process.env.CLOUDINARY_API,
+				        api_secret: process.env.CLOUDINARY_SECRET
 				    }
 				}
     }
