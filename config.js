@@ -3,7 +3,7 @@ var path = require('path'),
 
 config = {
 	production: {
-        url: 'rakshanshetty.in',
+        url: 'http://rakshanshetty.in',
         mail: {},
         database: {
 		    client: 'postgres',
