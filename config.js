@@ -1,5 +1,5 @@
 var path = require('path'),
-    config;
+    config,
 
 config = {
 	production: {
