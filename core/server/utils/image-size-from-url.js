@@ -27,13 +27,13 @@ var sizeOf       = require('image-size'),
 /**
  * @description read image dimensions from URL
  * @param {String} imagePath
- * @param {Number} timeout (optional)
  * @returns {Promise<Object>} imageObject or error
  */
-module.exports.getImageSizeFromUrl = function getImageSizeFromUrl(imagePath, timeout) {
+module.exports.getImageSizeFromUrl = function getImageSizeFromUrl(imagePath) {
     return new Promise(function imageSizeRequest(resolve, reject) {
         var imageObject = {},
-            options;
+            options,
+            timeout = config.times.getImageSizeTimeoutInMS || 10000;
 
         imageObject.url = imagePath;
 
@@ -71,28 +71,42 @@ module.exports.getImageSizeFromUrl = function getImageSizeFromUrl(imagePath, tim
 
                         return resolve(imageObject);
                     } catch (err) {
-                        // @ToDo: add real error handling here as soon as we have error logging
+                        err.context = imagePath;
+
                         return reject(err);
                     }
                 } else {
-                    // @ToDo: add real error handling here as soon as we have error logging
                     var err = new Error();
-                    err.message = imagePath;
+
+                    if (res.statusCode === 404) {
+                        err.message = 'Image not found.';
+                    } else {
+                        err.message = 'Unknown Request error.';
+                    }
+
+                    err.context = imagePath;
                     err.statusCode = res.statusCode;
 
                     return reject(err);
                 }
             });
         }).on('socket', function (socket) {
-            // don't set timeout if no timeout give as argument
             if (timeout) {
                 socket.setTimeout(timeout);
+
+                /**
+                 * https://nodejs.org/api/http.html
+                 * "...if a callback is assigned to the Server's 'timeout' event, timeouts must be handled explicitly"
+                 *
+                 * socket.destroy will jump to the error listener
+                 */
                 socket.on('timeout', function () {
                     request.abort();
+                    socket.destroy(new Error('Request timed out.'));
                 });
             }
         }).on('error', function (err) {
-            // @ToDo: add real error handling here as soon as we have error logging
+            err.context = imagePath;
 
             return reject(err);
         });

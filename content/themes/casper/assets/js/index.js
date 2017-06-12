@@ -1,1 +1,56 @@
-!function(t,e){"use strict";var o=t(document);o.ready(function(){var e=t(".post-content");e.fitVids(),t(".scroll-down").arctic_scroll(),t(".menu-button, .nav-cover, .nav-close").on("click",function(e){e.preventDefault(),t("body").toggleClass("nav-opened nav-closed")})}),t.fn.arctic_scroll=function(e){var o={elem:t(this),speed:500},a=t.extend(o,e);a.elem.click(function(e){e.preventDefault();var o,s=t(this),n=t("html, body"),c=s.attr("data-offset")?s.attr("data-offset"):!1,r=s.attr("data-position")?s.attr("data-position"):!1;c?(o=parseInt(c),n.stop(!0,!1).animate({scrollTop:t(this.hash).offset().top+o},a.speed)):r?(o=parseInt(r),n.stop(!0,!1).animate({scrollTop:o},a.speed)):n.stop(!0,!1).animate({scrollTop:t(this.hash).offset().top},a.speed)})}}(jQuery);
+/**
+ * Main JS file for Casper behaviours
+ */
+
+/* globals jQuery, document */
+(function ($, undefined) {
+    "use strict";
+
+    var $document = $(document);
+
+    $document.ready(function () {
+
+        var $postContent = $(".post-content");
+        $postContent.fitVids();
+
+        $(".scroll-down").arctic_scroll();
+
+        $(".menu-button, .nav-cover, .nav-close").on("click", function(e){
+            e.preventDefault();
+            $("body").toggleClass("nav-opened nav-closed");
+        });
+
+    });
+
+    // Arctic Scroll by Paul Adam Davis
+    // https://github.com/PaulAdamDavis/Arctic-Scroll
+    $.fn.arctic_scroll = function (options) {
+
+        var defaults = {
+            elem: $(this),
+            speed: 500
+        },
+
+        allOptions = $.extend(defaults, options);
+
+        allOptions.elem.click(function (event) {
+            event.preventDefault();
+            var $this = $(this),
+                $htmlBody = $('html, body'),
+                offset = ($this.attr('data-offset')) ? $this.attr('data-offset') : false,
+                position = ($this.attr('data-position')) ? $this.attr('data-position') : false,
+                toMove;
+
+            if (offset) {
+                toMove = parseInt(offset);
+                $htmlBody.stop(true, false).animate({scrollTop: ($(this.hash).offset().top + toMove) }, allOptions.speed);
+            } else if (position) {
+                toMove = parseInt(position);
+                $htmlBody.stop(true, false).animate({scrollTop: toMove }, allOptions.speed);
+            } else {
+                $htmlBody.stop(true, false).animate({scrollTop: ($(this.hash).offset().top) }, allOptions.speed);
+            }
+        });
+
+    };
+})(jQuery);

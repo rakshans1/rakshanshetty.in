@@ -97,7 +97,7 @@ db = {
             ];
 
             return Promise.each(collections, function then(Collection) {
-                return Collection.invokeThen('destroy');
+                return Collection.invokeThen('destroy', queryOpts);
             }).return({db: []})
             .catch(function (error) {
                 throw new errors.InternalServerError(error.message || error);
