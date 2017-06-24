@@ -1,0 +1,18 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- The big featured header --}}
+    {{> cover}}
+
+{{!-- The main content area on the homepage --}}
+<div class="main-content-area">
+    <div class="container post-listing">
+        <div class="row is-flex">
+
+    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
+    {{> "loop"}}
+
+        </div>
+    </div>
+    {{pagination}}
+</div>

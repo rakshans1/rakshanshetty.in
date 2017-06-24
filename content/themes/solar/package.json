@@ -1,0 +1,33 @@
+{
+    "name": "solar",
+    "description": "The personal blogging theme for Ghost. Beautiful, minimal and responsive.",
+    "demo": "https://solar.herokuapp.com",
+    "version": "0.0.1",
+    "engines": {
+        "ghost": ">=0.9.0 <1.0.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "Rakshan Shetty",
+        "email": "shetty.raxx555@gmail.com",
+        "url": "rakshanshetty.in"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Personal Blogs"
+        ]
+    },
+    "config": {
+        "posts_per_page": 6
+    },
+    "keywords": [
+        "ghost",
+        "theme"
+    ]
+}

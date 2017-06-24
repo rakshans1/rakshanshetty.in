@@ -1,0 +1,68 @@
+<div class="prev-next-wrap has-next has-prev">
+	<div class="row is-flex">
+		{{#next_post}}
+		<div class="col-sm-6 col-xs-12">
+			<article class="post post-card">
+				<div class="prev-next-link align-center">
+					<a href="{{url}}">Previous Post</a>
+				</div>
+				<a href="{{url}}" class="permalink">
+					<div class="featured-image" {{#if feature_image}} style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}"></div>
+				</a>
+				<div class="content-wrap">
+					<div class="entry-header align-center">
+						<span class="category">
+							{{tags limit="1"}}
+						</span>
+						<h3 class="title h4"><a href="{{url}}" rel="bookmark">{{title}}</a></h3>
+					</div>
+					<div class="entry-footer clearfix">
+						<div class="author">
+							<a href="/author/{{author.slug}}" rel="author">
+								{{#if author.profile_image}}<img class="avatar" src="{{author.profile_image}}" alt="{{author.name}}"/>{{/if}}
+								<span class="name">{{author.name}}</span>
+							</a>
+						</div>
+						<div class="published-date">
+							<span class="date"><i class="fa fa-calendar-o"></i></span>
+							<time class="time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+		{{/next_post}}
+		{{#prev_post}}
+		<div class="col-sm-6 col-xs-12">
+			<article class="post post-card">
+				<div class="prev-next-link align-center">
+					<a class="" href="{{url}}">Next Post</a>
+				</div>
+				<a href="{{url}}" class="permalink">
+					<div class="featured-image" {{#if feature_image}} style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}"></div>
+				</a>
+				<div class="content-wrap">
+					<div class="entry-header align-center">
+						<span class="category">
+							{{tags limit="1"}}
+						</span>
+						<h3 class="title h4"><a href="{{url}}" rel="bookmark">{{title}}</a></h3>
+					</div>
+					<div class="entry-footer clearfix">
+						<div class="author">
+							<a href="/author/{{author.slug}}" rel="author">
+								{{#if author.profile_image}}<img class="avatar" src="{{author.profile_image}}" alt="{{author.name}}"/>{{/if}}
+								<span class="name">{{author.name}}</span>
+							</a>
+						</div>
+						<div class="published-date">
+							<span class="date"><i class="fa fa-calendar-o"></i></span>
+                        	<time class="time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+		{{/prev_post}}
+	</div>
+</div>

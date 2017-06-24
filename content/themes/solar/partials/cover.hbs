@@ -1,0 +1,12 @@
+<section class="cover cover-home has-image" {{#if @blog.cover_image}} style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="cover-content-wrap align-center">
+                    <h1 class="intro-title">{{@blog.title}}</h1>
+                    <p class="intro-description">{{@blog.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
