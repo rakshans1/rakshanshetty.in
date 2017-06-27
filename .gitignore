@@ -1,4 +1,5 @@
-Ghost Blog-36e871aab45f.json
 npm-shrinkwrap.json
 npm-debug.log
 .vscode
+node_modules
+content/data/ghost-dev.db

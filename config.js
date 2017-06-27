@@ -30,6 +30,20 @@ config = {
 				        api_secret: process.env.CLOUDINARY_SECRET
 				    }
 				}
+    },
+	development: {
+        url: 'http://localhost:3000',
+        server: {
+            host: '0.0.0.0',
+            port: 3000
+        },
+		database: {
+            client: 'sqlite3',
+            connection: {
+                filename: path.join(__dirname, '/content/data/ghost-dev.db')
+            },
+            debug: false
+        }
     }
 };
 module.exports = config;
