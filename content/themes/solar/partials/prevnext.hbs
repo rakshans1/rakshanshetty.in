@@ -7,7 +7,7 @@
 					<a href="{{url}}">Previous Post</a>
 				</div>
 				<a href="{{url}}" class="permalink">
-					<div class="featured-image" {{#if feature_image}} style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}"></div>
+					<div class="featured-image" {{#if image}} style="background-image: url({{image}}){{else}}no-cover{{/if}}"></div>
 				</a>
 				<div class="content-wrap">
 					<div class="entry-header align-center">
@@ -19,7 +19,7 @@
 					<div class="entry-footer clearfix">
 						<div class="author">
 							<a href="/author/{{author.slug}}" rel="author">
-								{{#if author.profile_image}}<img class="avatar" src="{{author.profile_image}}" alt="{{author.name}}"/>{{/if}}
+								{{#if author.image}}<img class="avatar" src="{{author.image}}" alt="{{author.name}}"/>{{/if}}
 								<span class="name">{{author.name}}</span>
 							</a>
 						</div>
@@ -39,7 +39,7 @@
 					<a class="" href="{{url}}">Next Post</a>
 				</div>
 				<a href="{{url}}" class="permalink">
-					<div class="featured-image" {{#if feature_image}} style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}"></div>
+					<div class="featured-image" {{#if image}} style="background-image: url({{image}}){{else}}no-cover{{/if}}"></div>
 				</a>
 				<div class="content-wrap">
 					<div class="entry-header align-center">
@@ -51,7 +51,7 @@
 					<div class="entry-footer clearfix">
 						<div class="author">
 							<a href="/author/{{author.slug}}" rel="author">
-								{{#if author.profile_image}}<img class="avatar" src="{{author.profile_image}}" alt="{{author.name}}"/>{{/if}}
+								{{#if author.image}}<img class="avatar" src="{{author.image}}" alt="{{author.name}}"/>{{/if}}
 								<span class="name">{{author.name}}</span>
 							</a>
 						</div>
