@@ -1,44 +1,42 @@
 <footer class="site-footer">
-    {{!--<div class="footer-top">
+    <div class="footer-top">
         <div class="container">
             <div class="row">
-
                 <div class="col-sm-4">
                     <div class="widget">
                         <h4 class="widget-title h6">Recent Post</h4>
                         <div class="content recent-post">
-
-                            <div class="recent-single-post clearfix have-image">
-                                <a href="/post">
-                                    <div class="post-thumb pull-left" style="background-image: url(http://polar.gbjsolution.com/content/images/2017/05/fishing-with-dog.jpg);"></div>
-                                </a>
-                                <div class="post-info">
-                                    <h4 class="post-title">
-                                        <a href="/post">I like fishing because it is always the great way of relaxing</a>
-                                    </h4>
-                                    <div class="date">
-                                        <a href="/post">May 14,2017</a>
+                            {{#get "posts" limit="3"}}
+                                {{#foreach posts}}
+                                    <div class="recent-single-post clearfix have-image">
+                                        <a href="{{url}}">
+                                            <div class="post-thumb pull-left" style="background-image: url({{image}});"></div>
+                                        </a>
+                                        <div class="post-info">
+                                            <h4 class="post-title">
+                                                <a href="{{url}}">{{title}}</a>
+                                            </h4>
+                                            <div class="date">
+                                                <time class="time" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-
+                                {{/foreach}}
+                            {{/get}}
                         </div>
                     </div>
                 </div>
-
                 <div class="col-sm-4">
                     <div class="widget">
                         <h4 class="widget-title h6">Tags</h4>
                         <div class="content tagcloud">
-                            <a href="/tag/adventure">Adventure</a>
-                            <a href="/tag/adventure">Adventure</a>
-                            <a href="/tag/adventure">Adventure</a>
-                            <a href="/tag/adventure">Adventure</a>
+                            {{#get "tags" limit="all"}}
+                                {{tags separator=""}}
+                            {{/get}}
                         </div>
                     </div>
                 </div>
-
-                <div class="col-sm-4">
+                {{!--<div class="col-sm-4">
                     <div class="widget">
                         <h4 class="widget-title h6">Text widget</h4>
                         <div class="content about">
@@ -46,19 +44,17 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, dolor inventore distinctio quaerat quasi laudantium ea aliquid nam, ratione neque porro repellendus totam qui! Praesentium porro eveniet, tenetur soluta voluptates.</p>
                         </div>
                     </div>
-                </div>
-
-
+                </div>--}}
             </div>
         </div>
-    </div>--}}
+    </div>
     <div class="footer-bottom">
         <div class="container">
             <div class="footer-bottom-wrap clearfix">
                 <div class="social-links-wrap">
                     <ul class="social-links">
-                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                        {{#if @blog.facebook}}<li><a href="http://facebook.com/{{@blog.facebook}}"><i class="fa fa-facebook"></i></a></li> {{/if}}
+                        {{#if @blog.twitter}}<li><a href="http://twitter.com/{{@blog.twitter}}"><i class="fa fa-twitter"></i></a></li>{{/if}}
                         <li><a href="/rss"><i class="fa fa-rss"></i></a></li>
                     </ul>
                 </div>
