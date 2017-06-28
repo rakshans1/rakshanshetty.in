@@ -4,17 +4,22 @@ var path = require('path'),
 config = {
 	production: {
         url: 'http://rakshanshetty.in',
-        mail: {},
+        mail: {
+              transport: 'SMTP',
+              options: {
+                service: 'Mailgun',
+                auth: {
+                  user: process.env.MAILGUN_SMTP_LOGIN,
+                  pass: process.env.MAILGUN_SMTP_PASSWORD
+                }
+              }
+            },
+            
         database: {
-		    client: 'postgres',
-		    connection: {
-		          host: process.env.DATABASE_HOST,
-		          user: process.env.DATABASE_USER,
-		          password: process.env.DATABASE_PASSWORD,
-		          database: process.env.DATABASE_DATABASE,
-		          port: process.env.DATABASE_PORT
-		        }
-		    },
+                client: 'postgres',
+                connection: process.env.DATABASE_URL,
+                debug: false
+            },
 
         server: {
             host: '0.0.0.0',
