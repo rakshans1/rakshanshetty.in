@@ -26,6 +26,10 @@ config = {
             port: process.env.PORT
         },
 
+        paths: {
+		      contentPath: path.join(__dirname, '/content/')
+		    },
+
         storage: {
 				    active: 'ghost-cloudinary-store',
 				    'ghost-cloudinary-store': {
@@ -37,11 +41,14 @@ config = {
 				}
     },
 	development: {
-        url: 'http://localhost:3000',
-        server: {
-            host: '0.0.0.0',
-            port: 3000
-        },
+    url: 'http://localhost:3000',
+    server: {
+        host: '0.0.0.0',
+        port: 3000
+    },
+    paths: {
+      contentPath: path.join(__dirname, '/content/')
+    },
 		database: {
             client: 'sqlite3',
             connection: {
