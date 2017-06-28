@@ -33,7 +33,7 @@ config = {
         storage: {
 				    active: 'ghost-cloudinary-store',
 				    'ghost-cloudinary-store': {
-				    		secure: true,
+				        secure: true,
 				        cloud_name: process.env.CLOUDINARY_NAME,
 				        api_key: process.env.CLOUDINARY_API,
 				        api_secret: process.env.CLOUDINARY_SECRET
