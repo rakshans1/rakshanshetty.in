@@ -7,10 +7,10 @@ config = {
         mail: {
               transport: 'SMTP',
               options: {
-                service: 'Mailgun',
+                service: 'Sendgrid',
                 auth: {
-                  user: process.env.MAILGUN_SMTP_LOGIN,
-                  pass: process.env.MAILGUN_SMTP_PASSWORD
+                  user: process.env.SENDGRID_USERNAME,
+                  pass: process.env.SENDGRID_PASSWORD
                 }
               }
             },
