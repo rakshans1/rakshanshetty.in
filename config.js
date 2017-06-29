@@ -5,6 +5,7 @@ config = {
 	production: {
         url: 'http://rakshanshetty.in',
         mail: {
+              from: '"Rakshan Shetty" <shetty.raxx555@gmail.com>',
               transport: 'SMTP',
               options: {
                 service: 'Sendgrid',
