@@ -3,7 +3,7 @@
 
 {{!-- If we have a tag cover, display that - else blog cover - else nothing --}}
 {{#tag}}
-<section class="cover cover-author has-image" {{#if cover_image}} style="background-image: url({{cover_image}}){{else}}no-cover{{/if}}">
+<section class="cover cover-author has-image" {{#if image}} style="background-image: url({{image}}){{else}}no-cover{{/if}}">
     <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">

@@ -1,7 +1,7 @@
 <div class="about-author-wrap">
-<div class="about-author clearfix">
+<div class="about-author">
 	{{#if image}}
-	<a href="{{url}}" title="{{name}}">
+	<a href="{{url}}" class="avatar" title="{{name}}">
 		<img src="{{image}}" alt="{{name}}" class="avatar pull-left">
 	</a>
 	{{/if}}
@@ -15,10 +15,10 @@
 			<p>Read <a href="{{url}}">more posts</a> by this author.</p>
 		{{/if}}
 		<ul class="meta-info">
-			{{#if twitter}}<li><a href="http://twitter.com/{{twitter}}" target="_blank"><i class="fa fa-twitter"></i></a></li>{{/if}}
-			{{#if facebook}}<li><a href="http://facebook.com/{{facebook}}" target="_blank"><i class="fa fa-facebook"></i></a></li>{{/if}}
-			{{#if website}}<li class="website"><a href="{{website}}" target="_blank"><i class="fa fa-globe"></i></a></li>{{/if}}
-			{{#if location}}<li class="location" value="0"><i class="fa fa-map-marker"></i>{{location}}</li>{{/if}}
+			{{#if twitter}}<li><a href="http://twitter.com/{{twitter}}" target="_blank"><i class="icon-twitter"></i></a></li>{{/if}}
+			{{#if facebook}}<li><a href="http://facebook.com/{{facebook}}" target="_blank"><i class="icon-facebook"></i></a></li>{{/if}}
+			{{#if website}}<li class="website"><a href="{{website}}" target="_blank"><i class="icon-globe"></i></a></li>{{/if}}
+			{{#if location}}<li class="location" value="0"><i class="icon-map-marker"></i>{{location}}</li>{{/if}}
 		</ul>
 	</div>
 </div>
