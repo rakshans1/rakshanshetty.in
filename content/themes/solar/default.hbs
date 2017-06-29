@@ -6,7 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{!-- Page Meta --}}
-    <title>{{meta_title}}</title>
+    {{#is "index, tag, author"}} {{!-- Meta for index, tag and author contexts --}}
+		{{#is "index"}}
+		<title>{{@blog.title}}</title>
+		<meta name="description" content="{{@blog.description}}"/>
+		<meta itemprop="name" content="{{@blog.title}}"/>
+		{{/is}}
+		{{#is "tag"}}
+		<title>{{tag.name}} — {{@blog.title}}</title>
+		<meta name="description" content="{{@blog.description}}"/>
+		<meta itemprop="name" content="{{tag.name}} — {{@blog.title}}"/>
+		{{/is}}
+		{{#is "author"}}
+		<title>Posts by {{author.name}} — {{@blog.title}}</title>
+		<meta name="description" content="{{@blog.description}}"/>
+		<meta itemprop="name" content="Posts by {{author.name}} — {{@blog.title}}"/>
+		{{/is}}
+		<meta itemprop="description" content="{{@blog.description}}"/>
+		{{#if @blog.cover}}
+		<link rel="image_src" href="{{@blog.cover}}"/>
+		<meta itemprop="image" content="{{@blog.cover}}"/>
+		{{/if}}
+		{{/is}} {{!-- End of index, tag and author contexts --}}
+		{{#is "post, page"}} {{!--  Meta for post and page contexts --}}
+		<title>{{meta_title}} — {{@blog.title}}</title>
+		<meta itemprop="name" content="{{meta_title}} — {{@blog.title}}"/>
+		{{#if post.meta_description }}
+		<meta name="description" content="{{meta_description}}"/>
+		<meta itemprop="description" content="{{meta_description}}"/>
+		{{else}}
+		{{#post}}
+		<meta name="description" content="{{excerpt words="27"}}…"/>
+		<meta itemprop="description" content="{{excerpt words="27"}}…"/>
+		{{/post}}
+		{{/if}}
+		{{#post}}
+		{{#if image}}
+		<link rel="image_src" href="{{image}}"/>
+		<meta itemprop="image" content="{{image}}"/>
+		{{else}}
+		{{#if @blog.cover}}
+		<link rel="image_src" href="{{@blog.url}}{{@blog.cover}}"/>
+		<meta itemprop="image" content="{{@blog.url}}{{@blog.cover}}"/>
+		{{/if}}
+		{{/if}}
+		{{/post}}
+		{{/is}} {{!--  End of post and page contexts --}}
 
     {{!-- Mobile Meta --}}
     <meta name="HandheldFriendly" content="True" />
