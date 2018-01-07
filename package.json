@@ -11,10 +11,8 @@
   "version": "0.11.10",
   "dependencies": {
     "casper": "TryGhost/Casper#1.3.7",
-    "express": "^4.16.2",
     "ghost": "0.11.10",
     "ghost-cloudinary-store": "rakshans1/ghost-cloudinary-store",
-    "http-server": "^0.10.0",
     "ncp": "^2.0.0",
     "pg": "latest"
   },
