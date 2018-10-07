@@ -1,5 +1,6 @@
 npm-shrinkwrap.json
 npm-debug.log
 .vscode
+.idea
 node_modules
 content/data/ghost-dev.db
