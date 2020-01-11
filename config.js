@@ -3,7 +3,7 @@ var path = require('path'),
 
 config = {
 	production: {
-        url: 'http://rakshanshetty.in',
+        url: 'https://rakshanshetty.in',
         mail: {
               from: '"Rakshan Shetty" <shetty.raxx555@gmail.com>',
               transport: 'SMTP',
