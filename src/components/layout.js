@@ -1,26 +1,28 @@
-import React, { useState } from "react"
 import { Link } from "gatsby"
-import sun from "../../content/assets/sun.png"
+import React, { useState } from "react"
 import moon from "../../content/assets/moon.png"
+import sun from "../../content/assets/sun.png"
+import { getCurrentTheme, setCurrentTheme } from "../utils/helper"
+import { rhythm } from "../utils/typography"
 
-import { rhythm, scale } from "../utils/typography"
-
-const isMobile = window.innerWidth < 700
+const currentTheme = getCurrentTheme()
 
 const Layout = ({ location, title, children }) => {
-  const [theme, setTheme] = useState(window.__theme)
-  window.__onThemeChange = () => {
-    setTheme(window.__theme)
+  const [theme, setTheme] = useState(currentTheme)
+
+  const onThemeChange = newtheme => {
+    setCurrentTheme(newtheme)
+    setTheme(newtheme)
   }
+
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
   if (location.pathname === rootPath) {
-    const style = isMobile ? scale(1) : scale(1.5)
     header = (
       <h1
+        className="title"
         style={{
-          ...style,
           marginTop: 0,
           marginBottom: 0,
         }}
@@ -60,6 +62,7 @@ const Layout = ({ location, title, children }) => {
   }
   return (
     <div
+      className={theme}
       style={{
         marginLeft: `auto`,
         color: "var(--textNormal)",
@@ -92,9 +95,7 @@ const Layout = ({ location, title, children }) => {
             alignItems: "center",
           }}
           role="presentation"
-          onClick={() =>
-            window.__setPreferredTheme(theme === "light" ? "dark" : "light")
-          }
+          onClick={() => onThemeChange(theme === "light" ? "dark" : "light")}
         >
           <img
             src={theme === "dark" ? sun : moon}

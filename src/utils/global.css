@@ -7,7 +7,7 @@ body {
   color: var(--textNormal);
 }
 
-body.light {
+.light {
   --bg: #ffffff;
   --bg-reverse: #222;
   --bg-secondary: rgb(249, 250, 251);
@@ -21,7 +21,7 @@ body.light {
   --form-shadow: 0 2px 15px 0 rgba(210, 214, 220, 0.5);
 }
 
-body.dark {
+.dark {
   -webkit-font-smoothing: antialiased;
 
   --bg: #222;
@@ -35,6 +35,18 @@ body.dark {
   --inlineCode-bg: rgba(115, 124, 153, 0.2);
   --inlineCode-text: #e6e6e6;
   --form-shadow: 0 2px 15px 0 rgba(26, 26, 27, 0.637);
+}
+
+.title {
+  font-size: 3.9rem;
+  line-height: 4.3rem;
+}
+
+@media only screen and (max-width: 475px) {
+  .title {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+  }
 }
 
 code[class*="language-"],
