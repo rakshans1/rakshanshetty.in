@@ -64,54 +64,59 @@ const Layout = ({ location, title, children }) => {
     <div
       className={theme}
       style={{
-        marginLeft: `auto`,
         color: "var(--textNormal)",
         background: "var(--bg)",
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         transition: "color 0.2s ease-out, background 0.2s ease-out",
         minHeight: "100vh",
       }}
     >
-      <header
+      <div
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: location.pathname === rootPath ? rhythm(1.5) : 0,
+          marginLeft: `auto`,
+          marginRight: `auto`,
+          maxWidth: rhythm(24),
+          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        {header}
-        <div
+        <header
           style={{
-            cursor: "pointer",
-            background: "var(--bg-reverse)",
-            borderRadius: "50%",
-            width: 32,
-            height: 32,
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "space-between",
             alignItems: "center",
+            marginBottom: location.pathname === rootPath ? rhythm(1.5) : 0,
           }}
-          role="presentation"
-          onClick={() => onThemeChange(theme === "light" ? "dark" : "light")}
         >
-          <img
-            src={theme === "dark" ? sun : moon}
-            width="20"
-            height="20"
-            alt="theme"
-            style={{ pointerEvents: "none", marginBottom: 0 }}
-          />
-        </div>
-      </header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+          {header}
+          <div
+            style={{
+              cursor: "pointer",
+              background: "var(--bg-reverse)",
+              borderRadius: "50%",
+              width: 32,
+              height: 32,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            role="presentation"
+            onClick={() => onThemeChange(theme === "light" ? "dark" : "light")}
+          >
+            <img
+              src={theme === "dark" ? sun : moon}
+              width="20"
+              height="20"
+              alt="theme"
+              style={{ pointerEvents: "none", marginBottom: 0 }}
+            />
+          </div>
+        </header>
+        <main>{children}</main>
+        <footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>
+      </div>
     </div>
   )
 }
