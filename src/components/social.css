@@ -1,0 +1,11 @@
+.social {
+  color: var(--textTitle);
+  text-decoration: none;
+  box-shadow: none;
+  margin-right: 10px;
+}
+
+.social:hover {
+  color: var(--voilet);
+  box-shadow: 0 1px 0 0 currentColor;
+}
