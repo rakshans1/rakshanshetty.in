@@ -5,7 +5,7 @@ import sun from "../../content/assets/sun.png"
 import { getCurrentTheme, setCurrentTheme } from "../utils/helper"
 import { rhythm } from "../utils/typography"
 
-const currentTheme = getCurrentTheme()
+let currentTheme = getCurrentTheme()
 
 const Layout = ({ location, title, children }) => {
   const [theme, setTheme] = useState(currentTheme)
@@ -13,6 +13,7 @@ const Layout = ({ location, title, children }) => {
   const onThemeChange = newtheme => {
     setCurrentTheme(newtheme)
     setTheme(newtheme)
+    currentTheme = newtheme
   }
 
   const rootPath = `${__PATH_PREFIX__}/`

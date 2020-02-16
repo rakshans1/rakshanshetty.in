@@ -17,13 +17,10 @@ Setting up xdebug and php development with Apache is a lot of pain. Since the Wo
 
 Following are the steps to enable debugging php in vscode.
 
-
-
-
 ####**Prerequisite**
 
 ```shell
-sudo apt-get install php7.0-dev 
+sudo apt-get install php7.0-dev
 ```
 
 ####**Install XDebug**
@@ -37,16 +34,20 @@ is by running
 ```shell
 sudo apt-get install php-xdebug
 ```
+
 Run below command in terminal to ensure xdebug is installed properly. You’ll find xdebug in the list.
+
 ```shell
 php -m
 ```
+
 Make sure your /etc/php/7.0/mods-available folder contains xdebug.ini file and this file contains below line:
+
 ```shell
 zend_extension=xdebug.so
 ```
 
-* To enable xdebug in Apache edit /etc/php/7.0/apache2/php.ini and add 
+- To enable xdebug in Apache edit /etc/php/7.0/apache2/php.ini and add
 
 ```shell
 [xdebug]
@@ -55,20 +56,20 @@ xdebug.remote_autostart = 1
 ```
 
 **2. Installing xdebug
-Manually** 
+Manually**
 (for php < 7.0)
 
 Following their custom installation wizard:
 
-* Run `sudo php -i > ~/Desktop/php-info.txt`
-* Copy content of php-info.txt
-* Open [xdebug wizard](https://xdebug.org/wizard.php)
-* In the text box paste in the content from php-info.txt
-* Click Analyse my phpinfo() output
-* Follow the instructions that you get. They should look something like this:
-![xdebug-php-instruction](./images/xdebug_php_instruction.png)
+- Run `sudo php -i > ~/Desktop/php-info.txt`
+- Copy content of php-info.txt
+- Open [xdebug wizard](https://xdebug.org/wizard.php)
+- In the text box paste in the content from php-info.txt
+- Click Analyse my phpinfo() output
+- Follow the instructions that you get. They should look something like this:
+  ![xdebug-php-instruction](./images/xdebug_php_instruction.png)
 
-* To enable xdebug in Apache edit /etc/php/7.0/apache2/php.ini and add 
+- To enable xdebug in Apache edit /etc/php/7.0/apache2/php.ini and add
 
 ```shell
 [xdebug]
@@ -78,6 +79,7 @@ xdebug.remote_autostart = 1
 ```
 
 ####**Restart Apache**
+
 ```
 sudo service apache2 restart
 ```
@@ -88,10 +90,10 @@ To debug PHP in VS Code you need to install the [PHP Debug extension here](https
 
 Once you're done follow these steps:
 
-* Open the root of your WordPress installation in VS Code.
-* Press F5
-* Select php
-![vscode-php-debug](./images/vscode_php_debug.png)
+- Open the root of your WordPress installation in VS Code.
+- Press F5
+- Select php
+  ![vscode-php-debug](./images/vscode_php_debug.png)
 
 ####**Debugging WordPress**
 
@@ -118,5 +120,6 @@ Completing these steps will create a file in your workspace .vscode/launch.json
   ]
 }
 ```
+
 Now you [create breakpoints](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) and press F5 and VS Code will attach to XDebug and it will stop on breakpoints.
 ![vscode-wordpress-debugging](./images/demo.gif)

@@ -1,9 +1,7 @@
 export const getCurrentTheme = () => {
-  var preferredTheme
   try {
-    preferredTheme = localStorage.getItem("theme")
+    return localStorage.getItem("theme") || "light"
   } catch (err) {}
-  return preferredTheme || 'light';
 }
 
 export const setCurrentTheme = newTheme => {

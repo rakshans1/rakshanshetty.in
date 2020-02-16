@@ -11,18 +11,18 @@ tags: ["Tutorials"]
 
 This one line command tells Ubuntu to install lamp-server and phpmyadmin ( ^ means using tasksel), lamp-server is a set of applications to fully install apache, MySQL and php and set it up.
 
-```bash
+```shell
 sudo apt-get install lamp-server^ phpmyadmin
 ```
 
 This code does it all, then just follow the instructions:
 
-* Confirm the download with yes.
-* Setup the MySQL root password, then you will be asked, if you want to configure Apache or Lighthttpd, I choose Apache.
-* When you are prompted with:
-*The phpmyadmin package must have a database installed and configured before it can be used. This can be optionally handled with dbconfig-common.*
-Unless you know that it is not what you want to do, you should choose Yes.
-* You will be then asked to set a phpmyadmin password with MySQL, leave it blank, a random password will be generated, it is a good security measure, you can not give up what you don't know :)
+- Confirm the download with yes.
+- Setup the MySQL root password, then you will be asked, if you want to configure Apache or Lighthttpd, I choose Apache.
+- When you are prompted with:
+  _The phpmyadmin package must have a database installed and configured before it can be used. This can be optionally handled with dbconfig-common._
+  Unless you know that it is not what you want to do, you should choose Yes.
+- You will be then asked to set a phpmyadmin password with MySQL, leave it blank, a random password will be generated, it is a good security measure, you can not give up what you don't know :)
 
 And .. it's done.
 

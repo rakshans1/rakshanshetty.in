@@ -1,15 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import './social.css';
+import "./social.css"
 import { rhythm } from "../utils/typography"
 
 const SocialLink = ({ href, children }) => {
   return (
-    <a
-      className={"social"}
-      href={href}
-    >
+    <a className={"social"} href={href}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="15"

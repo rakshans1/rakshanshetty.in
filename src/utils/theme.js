@@ -1,4 +1,4 @@
-import './global.css';
+import "./global.css"
 import gray from "gray-percentage"
 import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
 
