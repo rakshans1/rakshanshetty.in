@@ -1,6 +1,6 @@
 export const getCurrentTheme = () => {
   try {
-    return localStorage.getItem("theme") || "light"
+    return localStorage.getItem("theme")
   } catch (err) {}
 }
 

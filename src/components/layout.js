@@ -8,7 +8,7 @@ import { rhythm } from "../utils/typography"
 let currentTheme = getCurrentTheme()
 
 const Layout = ({ location, title, children }) => {
-  const [theme, setTheme] = useState(currentTheme)
+  const [theme, setTheme] = useState(currentTheme || 'light')
 
   const onThemeChange = newtheme => {
     setCurrentTheme(newtheme)
