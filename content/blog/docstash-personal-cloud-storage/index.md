@@ -4,6 +4,7 @@ slug: "/docstash-personal-cloud-storage"
 date: "2016-11-01T07:48:00.000Z"
 description: ""
 image: "./images/screenshot-1.png"
+disqus_id: 'ghost-35'
 featured: false
 draft: false
 tags: ["Projects"]
