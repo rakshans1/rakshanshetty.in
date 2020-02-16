@@ -2,18 +2,20 @@ import { Link } from "gatsby"
 import React, { useState } from "react"
 import moon from "../../content/assets/moon.png"
 import sun from "../../content/assets/sun.png"
-import { getCurrentTheme, setCurrentTheme } from "../utils/helper"
 import { rhythm } from "../utils/typography"
 
-let currentTheme = getCurrentTheme()
-
 const Layout = ({ location, title, children }) => {
-  const [theme, setTheme] = useState(currentTheme || 'light')
+  let currentTheme
+  if (typeof window !== "undefined") {
+    currentTheme = window.__theme
+  }
+  const [theme, setTheme] = useState(currentTheme)
 
   const onThemeChange = newtheme => {
-    setCurrentTheme(newtheme)
     setTheme(newtheme)
-    currentTheme = newtheme
+    if (typeof window !== "undefined") {
+      window.__setPreferredTheme(newtheme)
+    }
   }
 
   const rootPath = `${__PATH_PREFIX__}/`
@@ -63,11 +65,7 @@ const Layout = ({ location, title, children }) => {
   }
   return (
     <div
-      className={theme}
       style={{
-        color: "var(--textNormal)",
-        background: "var(--bg)",
-        transition: "color 0.2s ease-out, background 0.2s ease-out",
         minHeight: "100vh",
       }}
     >
