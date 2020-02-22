@@ -7,11 +7,12 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { kebabCase } from "../utils/helper"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
-  const siteUrl =  data.site.siteMetadata.siteUrl
+  const siteUrl = data.site.siteMetadata.siteUrl
   const { previous, next } = pageContext
   let disqusConfig = {
     url: `${siteUrl}${post.fields.slug}`,
@@ -59,12 +60,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1),
           }}
         />
+        <section style={{ marginBottom: rhythm(0.5) }}>
+          Tags:{" "}
+          {post.frontmatter.tags.map((t, i) => (
+            <>
+              <Link to={`tag/${kebabCase(t)}`} rel={t}>
+                {t}
+              </Link>
+              {i < post.frontmatter.tags.length - 1 ? ", " : ""}
+            </>
+          ))}
+        </section>
         <Disqus config={disqusConfig} />
         <footer>
           <Bio />
         </footer>
       </article>
-
       <nav>
         <ul
           style={{
@@ -114,6 +125,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        tags
         image {
           childImageSharp {
             fluid(maxWidth: 600) {
