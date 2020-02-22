@@ -42,6 +42,20 @@ body {
   line-height: 4.3rem;
 }
 
+.theme-toggle {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+}
+
+.dark .theme-toggle {
+  background-image: url("../../content/assets/sun.png")
+}
+
+.light .theme-toggle {
+  background-image: url("../../content/assets/moon.png")
+}
+
 @media only screen and (max-width: 475px) {
   .title {
     font-size: 2.5rem;

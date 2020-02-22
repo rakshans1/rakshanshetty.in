@@ -1,7 +1,5 @@
 import { Link } from "gatsby"
 import React, { useState } from "react"
-import moon from "../../content/assets/moon.png"
-import sun from "../../content/assets/sun.png"
 import { rhythm } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
@@ -100,11 +98,8 @@ const Layout = ({ location, title, children }) => {
             role="presentation"
             onClick={() => onThemeChange(theme === "light" ? "dark" : "light")}
           >
-            <img
-              src={theme === "dark" ? sun : moon}
-              width="20"
-              height="20"
-              alt="theme"
+            <div
+              className="theme-toggle"
               style={{ pointerEvents: "none", marginBottom: 0 }}
             />
           </div>
