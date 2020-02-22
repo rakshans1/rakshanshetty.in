@@ -1,18 +1,17 @@
-import {graphql, Link} from "gatsby"
+import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import {rhythm} from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
-
-const TagsIndex = ({ pageContext,data, location }) => {
+const TagsIndex = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Blog" />
+      <SEO title={tag} />
       <h1>{tag}</h1>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug

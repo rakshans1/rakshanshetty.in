@@ -62,13 +62,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         />
         <section style={{ marginBottom: rhythm(0.5) }}>
           Tags:{" "}
-          {post.frontmatter.tags.map((t, i) => (
-            <>
-              <Link to={`tag/${kebabCase(t)}`} rel={t}>
-                {t}
+          {post.frontmatter.tags.map((tag, i) => (
+            <span key={tag}>
+              <Link to={`tag/${kebabCase(tag)}`}>
+                {tag}
               </Link>
               {i < post.frontmatter.tags.length - 1 ? ", " : ""}
-            </>
+            </span>
           ))}
         </section>
         <Disqus config={disqusConfig} />

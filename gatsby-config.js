@@ -4,6 +4,7 @@ module.exports = {
     author: `Rakshan Shetty`,
     description: `Software engineer, Learning Web development and sharing my experience`,
     siteUrl: `https://rakshanshetty.in`,
+    siteLanguage: 'en',
     social: {
       twitter: `https://twitter.com/rakshans2`,
       github: `https://github.com/rakshans1`,
@@ -118,10 +119,12 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `content/assets/icon.png`,
       },
     },
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
