@@ -5,7 +5,7 @@ date: "2020-02-22T04:48:32.228Z"
 description: ""
 featured: false
 draft: false
-tags: ["Tutorials"]
+tags: ["Tutorials", "React"]
 ---
 
 Native image lazy loading is added to browsers from [Chrome 76](https://caniuse.com/#feat=loading-lazy-attr) and other browsers are also starting to support it which helps us to add lazy image capabilities just by adding loading attribute.

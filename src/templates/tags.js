@@ -1,19 +1,26 @@
+import { graphql, Link } from "gatsby"
 import React from "react"
-import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import {kebabCase} from "../utils/helper"
 
-const BlogIndex = ({ data, location }) => {
+const TagsIndex = ({ pageContext, data, location }) => {
+  const { tag } = pageContext
   const siteTitle = data.site.siteMetadata.title
+  const siteUrl = data.site.siteMetadata.siteUrl
   const posts = data.allMarkdownRemark.edges
+  const url = `${siteUrl}/tag/${kebabCase(tag)}`
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={siteTitle} isRoot={true} />
-      <Bio />
+      <SEO
+        title={tag}
+        description={`All article with tag ${tag}`}
+        url={url}
+        isTag={true}
+      />
+      <h1>{tag}</h1>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
@@ -44,18 +51,19 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default TagsIndex
 
 export const pageQuery = graphql`
-  query {
+  query($tag: String) {
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { eq: false } } }
+      filter: { frontmatter: { draft: { eq: false }, tags: { in: [$tag] } } }
     ) {
       edges {
         node {
