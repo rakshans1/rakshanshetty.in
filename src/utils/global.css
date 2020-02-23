@@ -49,11 +49,11 @@ body {
 }
 
 .dark .theme-toggle {
-  background-image: url("../../content/assets/sun.png")
+  background-image: url("../../content/assets/sun.png");
 }
 
 .light .theme-toggle {
-  background-image: url("../../content/assets/moon.png")
+  background-image: url("../../content/assets/moon.png");
 }
 
 @media only screen and (max-width: 475px) {
@@ -61,6 +61,59 @@ body {
     font-size: 2.5rem;
     line-height: 3.5rem;
   }
+}
+
+.dark .filename {
+  background: #000;
+}
+
+.filename {
+  background: #222;
+  padding: 0.5rem 1rem 0.75rem;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: bold;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  margin-bottom: -0.65rem;
+  margin-left: -1.3125rem;
+  margin-right: -1.3125rem;
+}
+
+pre.language-terminal code.language-terminal {
+  position: relative;
+  display: block;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
+  padding-top: 20px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+pre.language-terminal {
+  overflow: hidden !important;
+  border: 3px solid #333;
+  border-radius: 10px;
+}
+
+.dark code.language-terminal::before {
+  background: #222;
+}
+
+code.language-terminal::before {
+  content: "\2022 \2022 \2022";
+  position: absolute;
+  top: -19px;
+  left: -18px;
+  height: 25px;
+
+  background: #333;
+  color: #c2c3c4;
+  width: 115%;
+  font-size: 2rem;
+  line-height: 0;
+  padding: 14px 0;
+  text-indent: 4px;
+  letter-spacing: -10px;
 }
 
 code[class*="language-"],
@@ -173,8 +226,7 @@ pre[class*="language-"] ::selection {
   color: #84a0c6;
 }
 
-
-.token.tag{
+.token.tag {
   color: #89b8c2;
 }
 

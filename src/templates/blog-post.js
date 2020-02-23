@@ -7,7 +7,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
-import { kebabCase } from "../utils/helper"
+import { kebabCase, formatReadingTime } from "../utils/helper"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -15,7 +15,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteUrl = data.site.siteMetadata.siteUrl
   const { previous, next } = pageContext
   const url = `${siteUrl}${post.fields.slug}`
-  const banner = post.frontmatter.banner?.publicURL;
+  const banner = post.frontmatter.banner?.publicURL
 
   let disqusConfig = {
     url,
@@ -52,6 +52,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             }}
           >
             {post.frontmatter.date}
+            {" • "}
+            {formatReadingTime(post.timeToRead)}
           </p>
         </header>
         {post.frontmatter?.image?.childImageSharp && (
@@ -129,6 +131,7 @@ export const pageQuery = graphql`
       }
       excerpt(pruneLength: 160)
       html
+      timeToRead
       frontmatter {
         title
         tags

@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import {kebabCase} from "../utils/helper"
+import { kebabCase, formatReadingTime } from "../utils/helper"
 
 const TagsIndex = ({ pageContext, data, location }) => {
   const { tag } = pageContext
@@ -35,7 +35,11 @@ const TagsIndex = ({ pageContext, data, location }) => {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small>
+                {node.frontmatter.date}
+                {" • "}
+                {formatReadingTime(node.timeToRead)}
+              </small>
             </header>
             <section>
               <p
@@ -68,6 +72,7 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt
+          timeToRead
           fields {
             slug
           }

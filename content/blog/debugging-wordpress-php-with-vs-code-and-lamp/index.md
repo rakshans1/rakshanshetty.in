@@ -43,13 +43,13 @@ php -m
 
 Make sure your /etc/php/7.0/mods-available folder contains xdebug.ini file and this file contains below line:
 
-```shell
+```terminal
 zend_extension=xdebug.so
 ```
 
 - To enable xdebug in Apache edit /etc/php/7.0/apache2/php.ini and add
 
-```shell
+```terminal
 [xdebug]
 xdebug.remote_enable = 1
 xdebug.remote_autostart = 1
@@ -71,7 +71,7 @@ Following their custom installation wizard:
 
 - To enable xdebug in Apache edit /etc/php/7.0/apache2/php.ini and add
 
-```shell
+```terminal
 [xdebug]
 zend_extension = /usr/lib/php/20151012/xdebug.so
 xdebug.remote_enable = 1
@@ -80,7 +80,7 @@ xdebug.remote_autostart = 1
 
 ####**Restart Apache**
 
-```
+```shell
 sudo service apache2 restart
 ```
 

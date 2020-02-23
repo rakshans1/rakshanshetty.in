@@ -4,7 +4,7 @@ module.exports = {
     author: `Rakshan Shetty`,
     description: `Software engineer, Learning Web development and sharing my experience`,
     siteUrl: `https://rakshanshetty.in`,
-    siteLanguage: 'en',
+    siteLanguage: "en",
     social: {
       twitter: `https://twitter.com/rakshans2`,
       github: `https://github.com/rakshans1`,

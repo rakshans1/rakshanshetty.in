@@ -11,13 +11,13 @@ tags: ["Tutorials"]
 
 Switch Caps to Esc from terminal
 
-```
+```shell
 setxkbmap -option caps:escape
 ```
 
 For swapping Caps with Esc
 
-```
+```shell
 setxkbmap -option caps:swapescape
 ```
 
@@ -34,9 +34,8 @@ _Tweak Tool > Typing > Caps Lock key behavior > Make Caps Lock an additional ESC
 
 ##### For Ubuntu unity
 
-```
+```shell
 sudo apt-get install dconf-tools
-
 ```
 
 After starting the dconf-editor, navigate to org >> gnome >> desktop >> input-sources.
@@ -46,11 +45,13 @@ Add 'caps:swapescape' in xkb-options []
 ######For visual studio code, vim plugin add in your _keybindings.json_
 File > Preferences > Keyboard Shortcuts and click on the link keybindings.json
 
-<pre><code class="javascript">
+```json
 // Place your key bindings in this file to overwrite the defaults
-[ {
-"key": "capslock", 
-"command": "extension.vim_escape",
-"when": "editorTextFocus && vim.active && !inDebugRepl"
-}]
-</code></pre>
+[
+  {
+    "key": "capslock",
+    "command": "extension.vim_escape",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
+  }
+]
+```
