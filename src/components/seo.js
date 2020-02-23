@@ -102,10 +102,12 @@ const SEO = props => {
     ...(isRoot && { dateModified: site.buildTime }),
     ...(datePublished && { datePublished: datePublished }),
     ...(dateModified && { dateModified: dateModified }),
-    image: {
-      "@type": "ImageObject",
-      url: seo.image,
-    },
+    ...(seo.image && {
+      image: {
+        "@type": "ImageObject",
+        url: seo.image,
+      },
+    }),
   }
 
   const schemaOrgPerson = {
