@@ -14,8 +14,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const siteUrl = data.site.siteMetadata.siteUrl
   const { previous, next } = pageContext
+  const url = `${siteUrl}${post.fields.slug}`
+  const banner = post.frontmatter.banner?.publicURL;
+
   let disqusConfig = {
-    url: `${siteUrl}${post.fields.slug}`,
+    url,
     identifier: post.frontmatter.disqus_id || post.id,
     title: post.frontmatter.title,
   }
@@ -23,8 +26,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
+        url={url}
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        datePublished={post.frontmatter.datePublished}
+        dateModified={post.frontmatter.dateModified}
+        isBlog={true}
+        image={banner}
       />
       <article>
         <header>
@@ -64,9 +72,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           Tags:{" "}
           {post.frontmatter.tags.map((tag, i) => (
             <span key={tag}>
-              <Link to={`tag/${kebabCase(tag)}`}>
-                {tag}
-              </Link>
+              <Link to={`tag/${kebabCase(tag)}`}>{tag}</Link>
               {i < post.frontmatter.tags.length - 1 ? ", " : ""}
             </span>
           ))}
@@ -133,7 +139,12 @@ export const pageQuery = graphql`
             }
           }
         }
+        banner: image {
+          publicURL
+        }
         date(formatString: "MMMM DD, YYYY")
+        datePublished: date(formatString: "YYYY-MM-DD")
+        dateModified: modified(formatString: "YYYY-MM-DD")
         description
         disqus_id
       }

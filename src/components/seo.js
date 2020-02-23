@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = post => {
+const SEO = props => {
   const { site, logo } = useStaticQuery(
     graphql`
       query {
@@ -33,7 +33,20 @@ const SEO = post => {
 
   const { publicURL: defaultBanner } = logo
 
-  const { description, lang, meta, title, banner, pathname } = post
+  const {
+    description,
+    lang,
+    meta,
+    title,
+    image,
+    isBlog,
+    isRoot,
+    datePublished,
+    dateModified,
+    url,
+    isTag,
+  } = props
+
   const {
     siteUrl,
     siteLanguage,
@@ -45,18 +58,29 @@ const SEO = post => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${banner || defaultBanner}`,
-    url: `${siteUrl}${pathname || ""}`,
+    image: isRoot
+      ? `${siteUrl}${defaultBanner}`
+      : image
+      ? `${siteUrl}${image}`
+      : null,
+    url: url || siteUrl,
+  }
+
+  const schemaOrgWebSite = {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    name: defaultTitle,
+    url: siteUrl,
   }
 
   const schemaOrgWebPage = {
     "@context": "http://schema.org",
     "@type": "WebPage",
-    url: siteUrl,
+    url: seo.url,
     inLanguage: siteLanguage,
     mainEntityOfPage: siteUrl,
-    description: defaultDescription,
-    name: defaultTitle,
+    description: seo.description,
+    name: seo.title,
     author: {
       "@type": "Person",
       name: author,
@@ -74,11 +98,13 @@ const SEO = post => {
       "@type": "Person",
       name: author,
     },
-    datePublished: "2016-10-29",
-    dateModified: site.buildTime,
+    ...(isRoot && { datePublished: "2016-10-29" }),
+    ...(isRoot && { dateModified: site.buildTime }),
+    ...(datePublished && { datePublished: datePublished }),
+    ...(dateModified && { dateModified: dateModified }),
     image: {
       "@type": "ImageObject",
-      url: `${siteUrl}${defaultBanner}`,
+      url: seo.image,
     },
   }
 
@@ -108,13 +134,69 @@ const SEO = post => {
   const itemListElement = [
     {
       "@type": "ListItem",
-      item: {
-        "@id": siteUrl,
-        name: "Homepage",
-      },
+      item: siteUrl,
+      name: "Blog",
       position: 1,
     },
   ]
+
+  let schemaOrgBlog = null
+  if (isBlog) {
+    schemaOrgBlog = {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      author: {
+        "@type": "Person",
+        name: author,
+      },
+      copyrightHolder: {
+        "@type": "Person",
+        name: author,
+      },
+      copyrightYear: new Date().getFullYear(),
+      creator: {
+        "@type": "Person",
+        name: author,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: author,
+        logo: {
+          "@type": "ImageObject",
+          url: `${siteUrl}${defaultBanner}`,
+        },
+      },
+      datePublished: datePublished,
+      ...(dateModified && { dateModified: dateModified }),
+      description: seo.description,
+      headline: seo.title,
+      inLanguage: siteLanguage,
+      url: seo.url,
+      name: seo.title,
+      image: {
+        "@type": "ImageObject",
+        url: seo.image,
+      },
+      mainEntityOfPage: siteUrl,
+    }
+    // Push current blogpost into breadcrumb list
+    itemListElement.push({
+      "@type": "ListItem",
+      item: seo.url,
+      name: seo.title,
+      position: 2,
+    })
+  }
+
+  if (isTag) {
+    // Push current tag into breadcrumb list
+    itemListElement.push({
+      "@type": "ListItem",
+      item: seo.url,
+      name: seo.title,
+      position: 2,
+    })
+  }
 
   const breadcrumb = {
     "@context": "http://schema.org",
@@ -151,7 +233,19 @@ const SEO = post => {
           },
           {
             property: `og:type`,
-            content: `website`,
+            content: isBlog ? `article` : `website`,
+          },
+          {
+            property: `og:url`,
+            content: seo.url,
+          },
+          {
+            property: `og:image`,
+            content: seo.image,
+          },
+          {
+            property: `og:image:alt`,
+            content: seo.description,
           },
           {
             name: `twitter:card`,
@@ -166,17 +260,41 @@ const SEO = post => {
             content: seo.title,
           },
           {
+            name: `twitter:image`,
+            content: seo.image,
+          },
+          {
+            name: `twitter:image:alt`,
+            content: seo.description,
+          },
+          {
             name: `twitter:description`,
             content: seo.description,
           },
-        ].concat(meta)}
+        ]
+          .filter(c => !!c.content)
+          .concat(meta)}
       >
-        <script type="application/ld+json">
-          {JSON.stringify(schemaOrgWebPage)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(schemaOrgPerson)}
-        </script>
+        {isRoot && (
+          <script type="application/ld+json">
+            {JSON.stringify(schemaOrgWebSite)}
+          </script>
+        )}
+        {!isBlog && (
+          <script type="application/ld+json">
+            {JSON.stringify(schemaOrgPerson)}
+          </script>
+        )}
+        {!isBlog && (
+          <script type="application/ld+json">
+            {JSON.stringify(schemaOrgWebPage)}
+          </script>
+        )}
+        {isBlog && (
+          <script type="application/ld+json">
+            {JSON.stringify(schemaOrgBlog)}
+          </script>
+        )}
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
       </Helmet>
     </>
