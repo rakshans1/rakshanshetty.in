@@ -215,7 +215,7 @@ const SEO = props => {
           lang,
         }}
         title={seo.title}
-        titleTemplate={`%s | ${defaultTitle}`}
+        titleTemplate={!isRoot && `%s | ${defaultTitle}`}
         meta={[
           {
             name: `image`,
