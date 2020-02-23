@@ -167,7 +167,7 @@ const SEO = props => {
         },
       },
       datePublished: datePublished,
-      ...(dateModified && { dateModified: dateModified }),
+      dateModified: dateModified || datePublished,
       description: seo.description,
       headline: seo.title,
       inLanguage: siteLanguage,
