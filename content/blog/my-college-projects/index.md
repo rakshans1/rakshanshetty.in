@@ -2,6 +2,7 @@
 title: "My College Projects"
 slug: "/my-college-projects"
 date: "2016-10-29T02:08:00.000Z"
+modified: "2020-02-22T02:08:00.000Z"
 description: ""
 image: "./images/l3l2guqp8anhsszqw7lj.jpg"
 disqus_id: 'ghost-2'
@@ -23,3 +24,5 @@ Preview - https://shoppcart.herokuapp.com
 Source Code - https://github.com/rakshans1/shoppcart
 This project was the real introduce of programming for me. I learned about how client-server architecture works. Learned about how payment system is integrated, Admin panel, Hosting websites.  
 ![Shoppcart](./images/screenshot-1.png)
+
+Other projects are available at [ Github ]( https://github.com/rakshans1 )
