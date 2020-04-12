@@ -25,7 +25,7 @@ List of vim tips I learned
 
 - Vim Undo history
 
-```vim
+```shell
 # Time-based undo/redo
 g- / g+
 
@@ -36,8 +36,34 @@ u / <C-R>
 
 - Toogle Case with tilde in normal mode
 
-```vim
+```shell
 ~
+```
+
+- Repeat previous substitution `:s`
+
+```shell
+:&
+
+# Use previous flags
+:&&
+
+# Change flags
+:&gc
+
+# Repeat last substitution in normal mode
+g&
+
+# Represent match pattern in a substitution
+
+:s/sub/&stitution/ # Here & is sub
+```
+
+- Change variable value
+
+```shell
+:let &<tab>
+:let &hlsearch=1
 ```
 
 More comming soon...
