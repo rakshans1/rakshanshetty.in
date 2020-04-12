@@ -1,6 +1,7 @@
 ---
 title: "Vim Tips"
 date: "2020-02-16T06:38:10.579Z"
+modified: "2020-04-12T06:38:10.579Z"
 description: ""
 image: "./images/dotfiles.png"
 featured: false
@@ -30,6 +31,13 @@ g- / g+
 
 # Tree-Based undo/redo
 u / <C-R>
+```
+
+
+- Toogle Case with tilde in normal mode
+
+```vim
+~
 ```
 
 More comming soon...
