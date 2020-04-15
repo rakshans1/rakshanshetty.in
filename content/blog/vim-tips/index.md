@@ -1,6 +1,7 @@
 ---
 title: "Vim Tips"
 date: "2020-02-16T06:38:10.579Z"
+modified: "2020-04-12T06:38:10.579Z"
 description: ""
 image: "./images/dotfiles.png"
 featured: false
@@ -24,12 +25,45 @@ List of vim tips I learned
 
 - Vim Undo history
 
-```vim
+```shell
 # Time-based undo/redo
 g- / g+
 
 # Tree-Based undo/redo
 u / <C-R>
+```
+
+
+- Toogle Case with tilde in normal mode
+
+```shell
+~
+```
+
+- Repeat previous substitution `:s`
+
+```shell
+:&
+
+# Use previous flags
+:&&
+
+# Change flags
+:&gc
+
+# Repeat last substitution in normal mode
+g&
+
+# Represent match pattern in a substitution
+
+:s/sub/&stitution/ # Here & is sub
+```
+
+- Change variable value
+
+```shell
+:let &<tab>
+:let &hlsearch=1
 ```
 
 More comming soon...
