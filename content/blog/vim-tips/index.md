@@ -66,4 +66,17 @@ g&
 :let &hlsearch=1
 ```
 
+- Expression evaluation in insert mode
+
+```shell
+<Ctrl-r>=  # 5*6 <Enter>
+```
+
+- Fix Indentation with syntax support
+
+```shell
+==
+<Visual>=
+```
+
 More comming soon...
