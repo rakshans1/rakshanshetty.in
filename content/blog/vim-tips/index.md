@@ -1,7 +1,7 @@
 ---
 title: "Vim Tips"
 date: "2020-02-16T06:38:10.579Z"
-modified: "2020-04-12T06:38:10.579Z"
+modified: "2020-04-18T07:38:10.579Z"
 description: ""
 image: "./images/dotfiles.png"
 featured: false
