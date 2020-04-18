@@ -75,8 +75,8 @@ g&
 - Fix Indentation with syntax support
 
 ```shell
-==
-<Visual>=
+==  #In Normal Mode
+=   # In Visual Mode    
 ```
 
 More comming soon...
