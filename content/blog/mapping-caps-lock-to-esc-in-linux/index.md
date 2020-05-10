@@ -5,7 +5,6 @@ date: "2017-06-12T04:05:00.000Z"
 description: ""
 image: "./images/mapping_caps_lock_to_esc_in_linux.png"
 featured: false
-draft: false
 tags: ["Tutorials"]
 ---
 

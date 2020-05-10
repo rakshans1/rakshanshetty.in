@@ -5,7 +5,6 @@ date: "2018-01-07T07:41:22.000Z"
 description: ""
 image: "./images/vscode_wordpress_debug.png"
 featured: false
-draft: false
 tags: ["Tutorials"]
 ---
 

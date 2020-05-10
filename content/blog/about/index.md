@@ -4,7 +4,6 @@ slug: "/about"
 date: "2016-11-03T16:15:00.000Z"
 description: ""
 featured: false
-draft: false
 tags: []
 ---
 

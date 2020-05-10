@@ -5,7 +5,6 @@ date: "2017-10-22T08:43:33.000Z"
 description: ""
 image: "./images/angular_4_release.jpg"
 featured: false
-draft: false
 tags: ["Tutorials"]
 ---
 

@@ -7,7 +7,6 @@ description: ""
 image: "./images/l3l2guqp8anhsszqw7lj.jpg"
 disqus_id: "ghost-2"
 featured: false
-draft: false
 tags: ["Projects"]
 ---
 

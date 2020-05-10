@@ -5,7 +5,6 @@ date: "2018-01-10T16:37:57.000Z"
 description: ""
 image: "./images/lamp.jpg"
 featured: false
-draft: false
 tags: ["Tutorials"]
 ---
 
