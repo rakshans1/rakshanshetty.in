@@ -5,7 +5,6 @@ modified: "2020-04-18T07:38:10.579Z"
 description: ""
 image: "./images/dotfiles.png"
 featured: false
-draft: false
 tags: ["Tips"]
 ---
 

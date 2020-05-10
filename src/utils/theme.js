@@ -39,9 +39,6 @@ const theme = {
     ul: {
       listStyle: "disc",
     },
-    "ul,ol": {
-      marginLeft: 0,
-    },
     [MOBILE_MEDIA_QUERY]: {
       "ul,ol": {
         marginLeft: rhythm(1),

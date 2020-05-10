@@ -6,7 +6,6 @@ description: ""
 image: "./images/screenshot-1.png"
 disqus_id: "ghost-35"
 featured: false
-draft: false
 tags: ["Projects"]
 ---
 
