@@ -948,6 +948,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@fastly/performance-observer-polyfill@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@fastly/performance-observer-polyfill/-/performance-observer-polyfill-1.1.1.tgz#2e64762fa2e43f32c01dcb2ac68421aded55bbb8"
+  integrity sha512-hmXJBYhIs77KPyg/IcPM5sDeQSPLrTzD6DqGfSUUtvEUoQxbW6nxHYCYJE8CP+Ay+OUqLZlTpW+w1OEOZWckzQ==
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -5716,6 +5721,14 @@ gatsby-remark-copy-linked-files@^2.1.36:
     probe-image-size "^4.1.1"
     unist-util-visit "^1.4.1"
 
+gatsby-remark-images-medium-zoom@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images-medium-zoom/-/gatsby-remark-images-medium-zoom-1.7.0.tgz#b9a55ebf29a4a15f9e7da7a8f4d0dfbe47aa5717"
+  integrity sha512-TLaq+ua+nO2CX/B/FnWB0OvJiLdplzbRCXrgCxYoZs3RkN5IfUu9BJYKEFjzx6J3uhwLvBA7XqE5cFOZ2cu4AQ==
+  dependencies:
+    "@fastly/performance-observer-polyfill" "^1.1.1"
+    medium-zoom "^1.0.4"
+
 gatsby-remark-images@^3.1.42:
   version "3.1.42"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.1.42.tgz#93a6e191c6af7fafad3966616ea66b4bd5280082"
@@ -8495,6 +8508,11 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
+
+medium-zoom@^1.0.4:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/medium-zoom/-/medium-zoom-1.0.5.tgz#81413dda20ccdd857141ff420cfab788dd32e20e"
+  integrity sha512-aLGa6WlTuFKWvH88bqTrY5ztJMN+D0hd8UX6BYc4YSoPayppzETjZUcdVcksgaoQEMg4cZSmXPg846fTp2rjRQ==
 
 mem@^4.0.0:
   version "4.3.0"
