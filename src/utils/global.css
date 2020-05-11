@@ -207,7 +207,10 @@ pre[class*="language-"] ::selection {
   color: #e2a478;
 }
 
-.token.punctuation {
+.token.punctuation ,
+.token.atrule,
+.token.operator,
+.token.keyword {
   color: #84a0c6;
 }
 
@@ -219,11 +222,6 @@ pre[class*="language-"] ::selection {
 
 .token.class-name {
   color: #b4be82;
-}
-
-.token.operator,
-.token.keyword {
-  color: #84a0c6;
 }
 
 .token.tag {
