@@ -28,7 +28,7 @@ Nodejs allows us to create a custom agent for making HTTP requests. So we can cr
 
 <div class="filename">native-http.js</div>
 
-```js
+```javascript
 import http from "http"
 import https from "https"
 
@@ -49,7 +49,7 @@ const req = http.request(options, (res) => {
 
 <div class="filename">axios.js</div>
 
-```js
+```javascript
 import http from "http"
 import https from "https"
 import axios from "axios"
