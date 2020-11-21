@@ -75,7 +75,13 @@ g&
 
 ```shell
 ==  #In Normal Mode
-=   # In Visual Mode    
+=   # In Visual Mode
+```
+
+- Swap window
+
+```shell
+<Ctrl-w><Ctrl-r>
 ```
 
 More comming soon...
