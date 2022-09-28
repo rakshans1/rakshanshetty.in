@@ -2,6 +2,7 @@
 
 body {
   --voilet: #663399;
+  --voilet-dark: #9048d7; 
   background-color: var(--bg);
   transition: color 0.2s ease-out, background 0.2s ease-out;
   color: var(--textNormal);
@@ -30,7 +31,7 @@ body {
   --header: #ffffff;
   --textNormal: rgba(255, 255, 255, 0.88);
   --textTitle: #ffffff;
-  --textLink: var(--voilet);
+  --textLink: var(--voilet-dark);
   --hr: hsla(0, 0%, 100%, 0.2);
   --inlineCode-bg: rgba(115, 124, 153, 0.2);
   --inlineCode-text: #e6e6e6;
