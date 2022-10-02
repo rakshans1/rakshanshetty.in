@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { Disqus } from "gatsby-plugin-disqus"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -58,10 +58,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </header>
         {post.frontmatter?.image?.childImageSharp && (
           <div style={{ marginBottom: rhythm(1) }}>
-            <Image
-              fluid={post.frontmatter.image.childImageSharp.fluid}
-              alt={post.frontmatter.title}
-            />
+            <GatsbyImage
+              image={post.frontmatter.image.childImageSharp.gatsbyImageData}
+              alt={post.frontmatter.title} />
           </div>
         )}
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -111,46 +110,43 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </ul>
       </nav>
     </Layout>
-  )
+  );
 }
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        siteUrl
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      fields {
-        slug
-      }
-      excerpt(pruneLength: 160)
-      html
-      timeToRead
-      frontmatter {
-        title
-        tags
-        image {
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        banner: image {
-          publicURL
-        }
-        date(formatString: "MMMM DD, YYYY")
-        datePublished: date(formatString: "YYYY-MM-DD")
-        dateModified: modified(formatString: "YYYY-MM-DD")
-        description
-        disqus_id
-      }
+export const pageQuery = graphql`query BlogPostBySlug($slug: String!) {
+  site {
+    siteMetadata {
+      title
+      siteUrl
     }
   }
+  markdownRemark(fields: {slug: {eq: $slug}}) {
+    id
+    fields {
+      slug
+    }
+    excerpt(pruneLength: 160)
+    html
+    timeToRead
+    frontmatter {
+      title
+      tags
+      image {
+        childImageSharp {
+          gatsbyImageData(width: 600, layout: CONSTRAINED)
+        }
+      }
+      banner: image {
+        publicURL
+      }
+      date(formatString: "MMMM DD, YYYY")
+      datePublished: date(formatString: "YYYY-MM-DD")
+      dateModified: modified(formatString: "YYYY-MM-DD")
+      description
+      disqus_id
+    }
+  }
+}
 `
