@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import "./social.css"
 import { rhythm } from "../utils/typography"
 
@@ -25,30 +25,27 @@ const SocialLink = ({ href, children }) => {
 }
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-        childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          author
-          description
-          social {
-            twitter
-            github
-            instagram
-            email
-            linkedin
-          }
-        }
+  const data = useStaticQuery(graphql`query BioQuery {
+  avatar: file(absolutePath: {regex: "/profile-pic.jpg/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 50, height: 50, layout: FIXED)
+    }
+  }
+  site {
+    siteMetadata {
+      author
+      description
+      social {
+        twitter
+        github
+        instagram
+        email
+        linkedin
       }
     }
-  `)
+  }
+}
+`)
 
   const { author, description, social } = data.site.siteMetadata
   return (
@@ -58,8 +55,8 @@ const Bio = () => {
         marginBottom: rhythm(2),
       }}
     >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
+      <GatsbyImage
+        image={data.avatar.childImageSharp.gatsbyImageData}
         alt={author}
         style={{
           marginRight: rhythm(1 / 2),
@@ -69,8 +66,7 @@ const Bio = () => {
         }}
         imgStyle={{
           borderRadius: `50%`,
-        }}
-      />
+        }} />
       <div>
         <p style={{ marginBottom: 0 }}>{description}</p>
         <div
@@ -96,7 +92,7 @@ const Bio = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Bio
