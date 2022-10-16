@@ -1,7 +1,7 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { rhythm } from "../utils/typography"
 import { kebabCase, formatReadingTime } from "../utils/helper"
 
@@ -14,7 +14,7 @@ const TagsIndex = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
+      <Seo
         title={tag}
         description={`All article with tag ${tag}`}
         url={url}
