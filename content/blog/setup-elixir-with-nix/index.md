@@ -52,7 +52,7 @@ with pkgs;
 buildEnv {
   name = "builder";
   paths = [
-    beam.packages.erlangR24.elixir_1_13
+    beam.packages.erlangR25.elixir_1_14
   ];
 }
 ```
@@ -63,7 +63,7 @@ Create `shell.nix` at the root of the project dir and add the following to it
 
 ```nix
 { sources ? import ./nix/sources.nix
-, pkgs ? import <nixpkgs> { }
+, pkgs ? import sources.nixpkgs { }
 }:
 
 with pkgs;
@@ -86,7 +86,7 @@ let
     export HEX_HOME=$PWD/.nix-hex
     # make hex from Nixpkgs available
     # `mix local.hex` will install hex into MIX_HOME and should take precedence
-    export MIX_PATH="${beam.packages.erlangR24.hex}/lib/erlang/lib/hex/ebin"
+    export MIX_PATH="${beam.packages.erlangR25.hex}/lib/erlang/lib/hex/ebin"
     export PATH=$MIX_HOME/bin:$HEX_HOME/bin:$PATH
     export LANG=C.UTF-8
     # keep your shell history in iex
@@ -124,7 +124,7 @@ This will install the specified version of erlang and elixir
 ```sh
 elixir --version
 
-Erlang/OTP 24 [erts-12.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit]
+Erlang/OTP 25 [erts-13.1] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit:ns]
 
-Elixir 1.13.4 (compiled with Erlang/OTP 24)
+Elixir 1.14.1 (compiled with Erlang/OTP 25)
 ```
