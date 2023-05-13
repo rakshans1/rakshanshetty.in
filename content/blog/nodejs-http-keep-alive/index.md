@@ -1,30 +1,29 @@
 ---
 title: "Reusing connection with HTTP Keep-Alive in Nodejs"
 date: "2020-05-10T15:38"
-modified: "2020-05-10T15:38"
+modified: "2023-05-13T15:38"
 description: ""
 featured: false
 tags: ["Tutorials", "Nodejs"]
 ---
 
-All the communication between microservices happens via an HTTP request.
+All communication between microservices occurs via an HTTP request.
 
-For making a single HTTP request services perform the following things
+To make a single HTTP request, services perform the following steps:
 
-1. Do the DNS query to get the IP address.
-2. Create a TCP connection with IP.
-3. Then Perform HTTP request.
+1. Perform a DNS query to get the IP address.
+2. Create a TCP connection with the IP.
+3. Perform the HTTP request.
 
-This creates lots of overhead and redundancy to create a new TCP connection before each request. Especially with services that make a lot of outgoing HTTP requests.
-We can avoid the first two steps if we reuse the TCP connections instead of doing the expensive TCP 3-way handshake and DNS query resolution.
+This process creates a lot of overhead and redundancy because a new TCP connection is established before each request. This is especially problematic for services that make many outgoing HTTP requests. We can avoid the first two steps by reusing TCP connections instead of performing the expensive TCP 3-way handshake and DNS query resolution.
 
-## So what's the solution?
+## What is the solution?
 
-By enabling HTTP keep-alive we can reuse the existing connection.
+Enabling HTTP keep-alive allows us to reuse existing connections.
 
-But services built with Nodejs particularly have a problem because by default Node's HTTP library does not use Keep-Alive connections. At peak hours we saw one of our services makes around 200k req/min to our downstream services.
+However, services built with Node.js have a problem because Node's HTTP library does not, by default, use Keep-Alive connections. At peak hours, we observed that one of our services made around 200k requests per minute to our downstream services.
 
-Nodejs allows us to create a custom agent for making HTTP requests. So we can create a new agent with keepAlive fag turned on
+Node.js allows us to create a custom agent for making HTTP requests. Therefore, we can create a new agent with the keepAlive flag turned on.
 
 <div class="filename">native-http.js</div>
 
@@ -68,10 +67,10 @@ export default api
 
 ## Benefits of using HTTP keep-alive
 
-- We saw almost 25% reduction in container count required to handle the same amount workloads.
-- Reduced TCP connection and DNS queries by a large amount.
-- Reduced New Connection count in ELB of downstream services.
-- Less strain to our DNS service and don't hit AWS DNS limits.
+- We observed almost a 25% reduction in the number of containers required to handle the same workload.
+- We significantly reduced TCP connections and DNS queries.
+- We reduced the number of new connections in the ELB of downstream services.
+- We eased the strain on our DNS service and avoided hitting AWS DNS limits.
 
 ![ HTTP vs TCP ](./images/http-vs-tcp.png)
 
