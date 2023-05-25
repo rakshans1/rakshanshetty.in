@@ -113,7 +113,7 @@ Create `.envrc` on root of project directory and add
 use_nix
 ```
 
-add run
+and run
 
 ```sh
 direnv allow
