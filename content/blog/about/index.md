@@ -11,6 +11,6 @@ tags: []
 
 Hi, I'm Rakshan Shetty. I develop apps for web. All of my open-source work is up on [Github](https://github.com/rakshans1/).
 
-[What I read this week...](https://rakshan.notion.site/What-I-read-this-week-5c915150457c4a9ebedc990f439e2972)
+[Weekly Chronicles...](https://brain.rakshanshetty.in/almanac/Weekly-Chronicles...)
 
-[Montly Lookbacks](https://rakshan.notion.site/rakshan/What-I-did-this-month-e9d518f1275e4afea3057868ba2d1aab)
+[Montly Chronicles...](https://brain.rakshanshetty.in/almanac/Monthly-Chronicles...)
