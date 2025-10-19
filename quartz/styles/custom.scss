@@ -1,0 +1,221 @@
+@use "./base.scss";
+
+// Custom styles for Iceberg theme
+
+// Theme variables and transitions
+body {
+  --transition: color 0.5s, background-color 0.5s;
+  transition: var(--transition);
+}
+
+// Light theme overrides
+:root[saved-theme="light"] {
+  --light: #e8e9ec;
+  --lightgray: #d2d4de;
+  --gray: #8389a3;
+  --darkgray: #33374c;
+  --dark: #33374c;
+  --secondary: #84a0c6;
+  --tertiary: #89b8c2;
+  --highlight: rgba(192, 197, 206, 0.15);
+  --bg-reverse: var(--dark);
+  --textTitle: var(--dark);
+}
+
+// Dark theme overrides
+:root[saved-theme="dark"] {
+  --light: #161821;
+  --lightgray: #1e2132;
+  --gray: #6b7089;
+  --darkgray: #c6c8d1;
+  --dark: #c6c8d1;
+  --secondary: #84a0c6;
+  --tertiary: #89b8c2;
+  --highlight: rgba(39, 44, 66, 0.15);
+  --bg-reverse: var(--light);
+  --textTitle: var(--dark);
+}
+
+// Theme toggle button
+.theme-toggle {
+  width: 20px;
+  height: 20px;
+  background-image: var(--toggleIcon);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+:root[saved-theme="light"] .theme-toggle {
+  --toggleIcon: url("/static/sun.png");
+}
+
+:root[saved-theme="dark"] .theme-toggle {
+  --toggleIcon: url("/static/moon.png");
+}
+
+// Article title sizing (not the page header title)
+article h1 {
+  font-size: 2.1875rem;
+  line-height: 2.625rem;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+@media (max-width: 475px) {
+  article h1 {
+    font-size: 1.75rem;
+    line-height: 2.1rem;
+  }
+}
+
+// Blog container layout
+.blog-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 672px;
+  padding: 2.625rem 1.3125rem;
+}
+
+// Bio component
+.bio {
+  display: flex;
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+
+  .bio-avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 0.875rem;
+    margin-bottom: 0;
+    min-width: 50px;
+    border-radius: 100%;
+  }
+
+  .bio-description {
+    margin-bottom: 0.5rem;
+  }
+
+  .bio-social {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+// Social links
+.social {
+  color: var(--darkgray);
+  text-decoration: none;
+  box-shadow: none;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: var(--secondary);
+    box-shadow: 0 1px 0 0 currentColor;
+  }
+
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+// Post meta (date and reading time)
+.post-meta {
+  font-size: 0.875rem;
+  color: var(--gray);
+  margin-bottom: 1.75rem;
+
+  .post-meta-separator {
+    padding: 0 0.25rem;
+  }
+}
+
+// Tag list
+.post-tags {
+  margin-top: 1.75rem;
+  font-size: 0.875rem;
+
+  a {
+    color: var(--secondary);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Previous/Next navigation
+.prev-next-nav {
+  margin-top: 3.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--lightgray);
+
+  .prev-next-links {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 0;
+    }
+
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Post list (homepage and tag archives)
+.post-list {
+  article {
+    margin-bottom: 2.625rem;
+
+    h3 {
+      margin-bottom: 0.4375rem;
+      margin-top: 1.75rem;
+
+      a {
+        color: var(--darkgray);
+        text-decoration: none;
+        box-shadow: none;
+
+        &:hover {
+          color: var(--secondary);
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .post-meta {
+      margin-bottom: 0.4375rem;
+    }
+  }
+}
+
+// Disqus comments
+.disqus-section {
+  margin-top: 3.5rem;
+}
+
+// Footer
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.875rem;
+}

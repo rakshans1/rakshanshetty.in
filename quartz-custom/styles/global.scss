@@ -1,0 +1,63 @@
+// Theme variables and transitions
+body {
+  --transition: color 0.5s, background-color 0.5s;
+  transition: var(--transition);
+}
+
+// Light theme overrides
+.light {
+  --light: #e8e9ec;
+  --lightgray: #d2d4de;
+  --gray: #8389a3;
+  --darkgray: #33374c;
+  --dark: #33374c;
+  --secondary: #84a0c6;
+  --tertiary: #89b8c2;
+  --highlight: rgba(192, 197, 206, 0.15);
+  --bg-reverse: var(--dark);
+  --textTitle: var(--dark);
+}
+
+// Dark theme overrides
+.dark {
+  --light: #161821;
+  --lightgray: #1e2132;
+  --gray: #6b7089;
+  --darkgray: #c6c8d1;
+  --dark: #c6c8d1;
+  --secondary: #84a0c6;
+  --tertiary: #89b8c2;
+  --highlight: rgba(39, 44, 66, 0.15);
+  --bg-reverse: var(--dark);
+  --textTitle: var(--dark);
+}
+
+// Theme toggle button
+.theme-toggle {
+  width: 20px;
+  height: 20px;
+  background-image: var(--toggleIcon);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.light .theme-toggle {
+  --toggleIcon: url("/static/sun.png");
+}
+
+.dark .theme-toggle {
+  --toggleIcon: url("/static/moon.png");
+}
+
+// Responsive title sizing
+.title {
+  font-size: 3.9rem;
+  line-height: 4.3rem;
+}
+
+@media (max-width: 475px) {
+  .title {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+  }
+}
