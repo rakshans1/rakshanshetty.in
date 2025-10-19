@@ -1,0 +1,35 @@
+.zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: zoom-out;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease;
+
+  :root[saved-theme="light"] & {
+    background: rgba(255, 255, 255, 0.85);
+  }
+}
+
+.zoomed-image {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.img-zoom img {
+  cursor: zoom-in;
+}
+
+.img-center img {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

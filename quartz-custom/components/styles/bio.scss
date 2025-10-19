@@ -1,0 +1,45 @@
+// Bio component
+.bio {
+  display: flex;
+  margin-bottom: 3.5rem;
+
+  .bio-avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 0.875rem;
+    margin-bottom: 0;
+    min-width: 50px;
+    border-radius: 100%;
+  }
+
+  .bio-description {
+    margin-bottom: 0.5rem;
+  }
+
+  .bio-social {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+// Social links
+.social {
+  color: var(--darkgray);
+  text-decoration: none;
+  box-shadow: none;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: var(--secondary);
+    box-shadow: 0 1px 0 0 currentColor;
+  }
+
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+}

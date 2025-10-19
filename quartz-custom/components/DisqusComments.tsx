@@ -1,4 +1,5 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "../../quartz/components/types"
+import style from "./styles/disqusComments.scss"
 
 const DisqusComments: QuartzComponentConstructor = () => {
   const DisqusComments = ({ fileData }: QuartzComponentProps) => {
@@ -42,6 +43,7 @@ const DisqusComments: QuartzComponentConstructor = () => {
     )
   }
 
+  DisqusComments.css = style
   return DisqusComments
 }
 

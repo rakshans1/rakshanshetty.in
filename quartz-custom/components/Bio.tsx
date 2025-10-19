@@ -1,4 +1,5 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "../../quartz/components/types"
+import style from "./styles/bio.scss"
 
 const Bio: QuartzComponentConstructor = () => {
   const Bio = ({ fileData }: QuartzComponentProps) => {
@@ -48,6 +49,7 @@ const Bio: QuartzComponentConstructor = () => {
     )
   }
 
+  Bio.css = style
   return Bio
 }
 

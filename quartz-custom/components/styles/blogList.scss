@@ -1,0 +1,32 @@
+.post-list {
+  article {
+    margin-bottom: 2.625rem;
+
+    h3 {
+      margin-bottom: 0.4375rem;
+      font-size: 1.5rem;
+      margin-top: 1.75rem;
+
+      a {
+        color: var(--secondary);
+        text-decoration: none;
+        box-shadow: none;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .post-meta {
+      margin-bottom: 0;
+      font-size: 0.875rem;
+      line-height: 0.5rem;
+      color: var(--gray);
+
+      .post-meta-separator {
+        margin: 0 0.3rem;
+      }
+    }
+  }
+}
