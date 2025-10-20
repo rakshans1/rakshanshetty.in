@@ -1,19 +1,23 @@
-import { QuartzComponentConstructor, QuartzComponentProps } from "../../quartz/components/types"
-import style from "./styles/disqusComments.scss"
+import {
+  QuartzComponentConstructor,
+  QuartzComponentProps,
+} from "../../quartz/components/types";
+import style from "./styles/disqusComments.scss";
 
 const DisqusComments: QuartzComponentConstructor = () => {
   const DisqusComments = ({ fileData }: QuartzComponentProps) => {
     // Don't show on index page
-    if (fileData.slug === "index") {
-      return null
+    const disableComment = fileData.frontmatter?.["disable-comment"];
+    if (disableComment) {
+      return null;
     }
 
-    const disqusShortname = "rakshanshetty"
+    const disqusShortname = "rakshanshetty";
     const disqusConfig = {
       url: `https://rakshanshetty.in/${fileData.slug}`,
       identifier: fileData.frontmatter?.disqus_id || fileData.slug,
-      title: fileData.frontmatter?.title
-    }
+      title: fileData.frontmatter?.title,
+    };
 
     return (
       <div className="disqus-section">
@@ -32,19 +36,21 @@ const DisqusComments: QuartzComponentConstructor = () => {
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);
               })();
-            `
+            `,
           }}
         />
         <noscript>
           Please enable JavaScript to view the{" "}
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript">
+            comments powered by Disqus.
+          </a>
         </noscript>
       </div>
-    )
-  }
+    );
+  };
 
-  DisqusComments.css = style
-  return DisqusComments
-}
+  DisqusComments.css = style;
+  return DisqusComments;
+};
 
-export default DisqusComments
+export default DisqusComments;

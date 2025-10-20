@@ -30,13 +30,18 @@ sync:
 build:
   npx quartz build
 
+publish:
+    #!/usr/bin/env bash
+    cd content && git add . && git commit -m "Update" && git push
+    cd ..
+    git add . && git commit -m "Update content" && git push
+
 # Development server with auto-rebuild
 serve:
   npx quartz build --serve --port 9020 --wsPort 9920
 
 # Complete deployment pipeline
-deploy: sync build
-  @echo "✨ Build complete! Ready for deployment"
+deploy: sync build publish
 
 # Clean build artifacts
 clean:
