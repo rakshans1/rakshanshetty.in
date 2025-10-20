@@ -1,0 +1,377 @@
+// Quartz Component Overrides for Iceberg Theme
+// These styles override built-in Quartz components to match Iceberg colors
+// All selectors target Quartz's default component classes
+
+// Callout/Admonition color overrides
+.callout {
+  // Note/Info callouts - blue
+  &[data-callout="note"],
+  &[data-callout="info"] {
+    --callout-color: var(--iceberg-blue);
+  }
+
+  // Tip/Success callouts - green
+  &[data-callout="tip"],
+  &[data-callout="success"] {
+    --callout-color: var(--iceberg-green);
+  }
+
+  // Warning/Caution callouts - yellow
+  &[data-callout="warning"],
+  &[data-callout="caution"] {
+    --callout-color: var(--iceberg-yellow);
+  }
+
+  // Danger/Error callouts - red
+  &[data-callout="danger"],
+  &[data-callout="error"] {
+    --callout-color: var(--iceberg-red);
+  }
+
+  // Apply the color to borders and titles
+  border-left-color: var(--callout-color);
+
+  .callout-title {
+    color: var(--callout-color);
+  }
+}
+
+// Search component styling
+#search-container {
+  input {
+    border-color: var(--iceberg-comment-dark);
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+
+    :root[saved-theme="light"] & {
+      border-color: var(--iceberg-comment-light);
+    }
+
+    &:focus {
+      border-color: var(--iceberg-blue);
+      box-shadow: 0 0 0 2px rgba(132, 160, 198, 0.2);
+      outline: none;
+    }
+  }
+
+  .search-result {
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: var(--highlight);
+    }
+
+    mark {
+      background: var(--iceberg-yellow);
+      color: var(--textNormal);
+      padding: 0.1em 0.2em;
+      border-radius: 2px;
+
+      :root[saved-theme="dark"] & {
+        color: var(--iceberg-bg-dark);
+      }
+    }
+  }
+}
+
+// Graph component Iceberg colors
+#graph-container {
+  .node {
+    fill: var(--iceberg-blue);
+    transition: fill 0.2s ease;
+
+    &:hover {
+      fill: var(--iceberg-cyan);
+    }
+
+    &.active {
+      fill: var(--iceberg-purple);
+    }
+  }
+
+  .link {
+    stroke: var(--iceberg-comment-dark);
+    transition: stroke 0.2s ease;
+
+    :root[saved-theme="light"] & {
+      stroke: var(--iceberg-comment-light);
+    }
+
+    &:hover {
+      stroke: var(--iceberg-cyan);
+    }
+  }
+
+  text {
+    fill: var(--textNormal);
+    font-size: 0.8rem;
+  }
+}
+
+// Explorer component Iceberg colors
+.explorer {
+  .folder-button {
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      background: var(--highlight);
+      color: var(--iceberg-blue);
+    }
+  }
+
+  .folder-title,
+  .explorer-link {
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--iceberg-cyan);
+    }
+  }
+
+  .folder-outer {
+    &.collapsed {
+      .folder-button {
+        color: var(--textMuted);
+      }
+    }
+
+    &.open {
+      .folder-button {
+        color: var(--iceberg-blue);
+      }
+    }
+  }
+
+  // Current page indicator
+  .explorer-link.active {
+    color: var(--iceberg-purple);
+    font-weight: 600;
+  }
+}
+
+// Popover styling
+.popover {
+  background: var(--bg-secondary);
+  border: 1px solid var(--iceberg-comment-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  :root[saved-theme="light"] & {
+    border-color: var(--iceberg-comment-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  :root[saved-theme="dark"] & {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--iceberg-blue);
+  }
+}
+
+// Breadcrumbs enhancement
+.breadcrumb-container {
+  a {
+    color: var(--secondary);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--iceberg-cyan);
+    }
+  }
+
+  .breadcrumb-separator {
+    color: var(--textMuted);
+    margin: 0 0.5rem;
+  }
+
+  .breadcrumb-current {
+    color: var(--iceberg-blue);
+    font-weight: 600;
+  }
+}
+
+// Table of Contents styling
+.toc {
+  a {
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
+
+    &.active {
+      color: var(--iceberg-blue);
+      background: var(--highlight);
+      border-left: 3px solid var(--iceberg-blue);
+      padding-left: 0.75rem;
+    }
+
+    &:hover {
+      color: var(--iceberg-cyan);
+    }
+  }
+
+  .depth-1 {
+    font-weight: 600;
+  }
+
+  .depth-2 {
+    padding-left: 1rem;
+  }
+
+  .depth-3 {
+    padding-left: 2rem;
+    font-size: 0.9em;
+  }
+}
+
+// Backlinks styling
+.backlinks {
+  a {
+    color: var(--iceberg-blue);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--iceberg-cyan);
+    }
+  }
+
+  .backlink-count {
+    color: var(--textMuted);
+    font-size: 0.9em;
+  }
+}
+
+// Recent notes/pages styling
+.recent-notes {
+  .recent-note {
+    border-left: 3px solid transparent;
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+
+    &:hover {
+      border-left-color: var(--iceberg-blue);
+      background: var(--highlight);
+    }
+  }
+
+  .note-date {
+    color: var(--textMuted);
+    font-size: 0.9em;
+  }
+}
+
+// Dark mode toggle button
+.darkmode {
+  button {
+    background: var(--bg-secondary);
+    border: 1px solid var(--iceberg-comment-dark);
+    border-radius: 6px;
+    padding: 0.5rem;
+    transition: all 0.2s ease;
+
+    :root[saved-theme="light"] & {
+      border-color: var(--iceberg-comment-light);
+    }
+
+    &:hover {
+      background: var(--highlight);
+      border-color: var(--iceberg-blue);
+      transform: scale(1.05);
+    }
+
+    svg {
+      color: var(--iceberg-blue);
+    }
+  }
+}
+
+// Footer styling
+footer {
+  border-top: 1px solid var(--iceberg-selection-dark);
+  color: var(--textMuted);
+
+  :root[saved-theme="light"] & {
+    border-top-color: var(--iceberg-selection-light);
+  }
+
+  a {
+    color: var(--iceberg-blue);
+
+    &:hover {
+      color: var(--iceberg-cyan);
+    }
+  }
+}
+
+// Content metadata (reading time, dates, etc.)
+.content-meta {
+  color: var(--textMuted);
+  font-size: 0.9em;
+
+  svg {
+    color: var(--iceberg-blue);
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+// Pagination controls
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 2rem 0;
+
+  a,
+  button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--iceberg-comment-dark);
+    border-radius: 4px;
+    background: var(--bg-secondary);
+    color: var(--textNormal);
+    transition: all 0.2s ease;
+
+    :root[saved-theme="light"] & {
+      border-color: var(--iceberg-comment-light);
+    }
+
+    &:hover:not(.disabled) {
+      background: var(--iceberg-blue);
+      color: var(--iceberg-bg-dark);
+      border-color: var(--iceberg-blue);
+
+      :root[saved-theme="light"] & {
+        color: var(--iceberg-bg-light);
+      }
+    }
+
+    &.active {
+      background: var(--iceberg-blue);
+      color: var(--iceberg-bg-dark);
+      border-color: var(--iceberg-blue);
+
+      :root[saved-theme="light"] & {
+        color: var(--iceberg-bg-light);
+      }
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

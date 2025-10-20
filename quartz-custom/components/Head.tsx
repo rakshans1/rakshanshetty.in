@@ -7,7 +7,7 @@ import { unescapeHTML } from "../../quartz/util/escape"
 import { CustomOgImagesEmitterName } from "../../quartz/plugins/emitters/ogImage"
 
 export default (() => {
-  const BlogSEO: QuartzComponent = ({
+  const Head: QuartzComponent = ({
     cfg,
     fileData,
     externalResources,
@@ -36,76 +36,9 @@ export default (() => {
       (e) => e.name === CustomOgImagesEmitterName,
     )
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
-    const ogImage = fileData.frontmatter?.image || ogImageDefaultPath
-    const isArticle = fileData.frontmatter?.tags?.includes("blog")
 
-    // Person schema (author)
-    const personSchema = {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Rakshan Shetty",
-      "url": "https://rakshanshetty.in",
-      "sameAs": [
-        "https://twitter.com/rakshans2",
-        "https://github.com/rakshans1",
-        "https://www.linkedin.com/in/rakshan-shetty"
-      ],
-      "jobTitle": "Software Engineer",
-      "description": "Software engineer, Learning Web development and sharing my experience"
-    }
-
-    // Article schema (for blog posts)
-    const articleSchema = isArticle ? {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": title,
-      "description": description,
-      "image": ogImage,
-      "datePublished": fileData.frontmatter?.date,
-      "dateModified": fileData.frontmatter?.modified || fileData.frontmatter?.date,
-      "author": personSchema,
-      "publisher": {
-        "@type": "Organization",
-        "name": "Rakshan Shetty",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://rakshanshetty.in/static/profile-pic.jpg"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": socialUrl
-      }
-    } : null
-
-    // WebSite schema (for homepage)
-    const websiteSchema = fileData.slug === "index" ? {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": "https://rakshanshetty.in",
-      "name": "Rakshan Shetty",
-      "description": description
-    } : null
-
-    // BreadcrumbList schema
-    const breadcrumbSchema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://rakshanshetty.in"
-        },
-        ...(fileData.slug !== "index" ? [{
-          "@type": "ListItem",
-          "position": 2,
-          "name": title,
-          "item": socialUrl
-        }] : [])
-      ]
-    }
+    // Path to custom styles
+    const customStylesPath = joinSegments(baseDir, "custom.css")
 
     return (
       <head>
@@ -126,9 +59,8 @@ export default (() => {
 
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={title} />
-        <meta property="og:type" content={isArticle ? "article" : "website"} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:creator" content="@rakshans2" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
@@ -136,12 +68,12 @@ export default (() => {
 
         {!usesCustomOgImage && (
           <>
-            <meta property="og:image" content={ogImage} />
-            <meta property="og:image:url" content={ogImage} />
-            <meta name="twitter:image" content={ogImage} />
+            <meta property="og:image" content={ogImageDefaultPath} />
+            <meta property="og:image:url" content={ogImageDefaultPath} />
+            <meta name="twitter:image" content={ogImageDefaultPath} />
             <meta
               property="og:image:type"
-              content={`image/${getFileExtension(ogImage) ?? "png"}`}
+              content={`image/${getFileExtension(ogImageDefaultPath) ?? "png"}`}
             />
           </>
         )}
@@ -150,31 +82,30 @@ export default (() => {
           <>
             <meta property="twitter:domain" content={cfg.baseUrl}></meta>
             <meta property="og:url" content={socialUrl}></meta>
+            <meta property="twitter:url" content={socialUrl}></meta>
           </>
         )}
 
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
+        {/* Custom Iceberg theme styles */}
+        <link rel="stylesheet" href={customStylesPath} />
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
-
-        {/* Structured Data */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(personSchema)}} />
-        {articleSchema && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(articleSchema)}} />
-        )}
-        {websiteSchema && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema)}} />
-        )}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
-
-        {additionalHead.beforeDOMReady}
+        {additionalHead.map((resource) => {
+          if (typeof resource === "function") {
+            return resource(fileData)
+          } else {
+            return resource
+          }
+        })}
       </head>
     )
   }
 
-  return BlogSEO
+  return Head
 }) satisfies QuartzComponentConstructor

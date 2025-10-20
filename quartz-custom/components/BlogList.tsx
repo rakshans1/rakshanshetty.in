@@ -23,14 +23,9 @@ const BlogList: QuartzComponentConstructor = () => {
     fileData,
     allFiles,
   }: QuartzComponentProps) => {
-    // Only show on index page
-    if (fileData.slug !== "index") {
-      return null;
-    }
-
     // Filter only blog posts
-    const blogPosts = allFiles.filter((f) =>
-      f.frontmatter?.tags?.includes("blog"),
+    const blogPosts = allFiles.filter(
+      (f) => f.frontmatter?.["disable-index"] !== true,
     );
 
     // Sort by date descending

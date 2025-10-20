@@ -19,10 +19,12 @@ quartz-update:
   cp -r ../quartz/index.d.ts index.d.ts
   cp -r ../quartz/package-lock.json package-lock.json
 
-# Sync content from Obsidian vault (to be implemented in Phase 2)
 sync:
-  @echo "🔄 Syncing blog content from vault..."
+  #!/usr/bin/env bash
+  export BRAIN_VAULT="$HOME/Documents/brain/notes"
+  export BRAIN_PUBLIC_VAULT="$HOME/projects/node/rakshanshetty.in/content"
   node utils/content-sync/index.js
+  mv content/blog-index.md content/index.md
 
 # Build the blog
 build:

@@ -86,6 +86,7 @@ const config: QuartzConfig = {
       Plugin.Assets(),
       Plugin.Static(),
       CustomPlugins.Emitters.Static(),
+      CustomPlugins.Emitters.CustomStyles(),
     ],
   },
 };

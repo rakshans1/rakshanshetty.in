@@ -1,7 +1,9 @@
-// Bio component
 .bio {
   display: flex;
-  margin-bottom: 3.5rem;
+
+  a[href^="http"]:after {
+    content: "";
+  }
 
   .bio-avatar {
     width: 50px;
