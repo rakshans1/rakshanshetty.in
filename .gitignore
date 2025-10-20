@@ -58,6 +58,10 @@ typings/
 .cache/
 public
 
+# Quartz files
+.quartz-cache/
+content/
+
 # Mac files
 .DS_Store
 
@@ -67,3 +71,6 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Thoughts directory
+# thoughts/

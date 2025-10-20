@@ -1,0 +1,244 @@
+// Iceberg Theme Enhancements
+// Custom styling to enhance the Iceberg theme across the digital garden
+// All customizations are in quartz-custom/ to survive Quartz updates
+
+// Import Iceberg variables
+@use "./variables";
+
+// Enhanced code blocks with terminal style
+pre {
+  background: var(--iceberg-bg-dark) !important;
+  border: 1px solid var(--iceberg-selection-dark);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+
+  :root[saved-theme="light"] & {
+    background: var(--iceberg-bg-light-alt) !important;
+    border-color: var(--iceberg-selection-light);
+  }
+}
+
+// Inline code styling
+code:not(pre code) {
+  background: var(--iceberg-selection-dark);
+  color: var(--iceberg-cyan);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+
+  :root[saved-theme="light"] & {
+    background: var(--iceberg-selection-light);
+    color: var(--iceberg-blue);
+  }
+}
+
+// Terminal-style code blocks
+.terminal {
+  position: relative;
+  background: var(--iceberg-bg-dark);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1rem 0;
+
+  &::before {
+    content: "● ● ●";
+    display: block;
+    background: var(--iceberg-bg-dark-alt);
+    padding: 0.75rem 1rem;
+    color: var(--iceberg-comment-dark);
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+  }
+
+  pre {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  :root[saved-theme="light"] & {
+    background: var(--iceberg-bg-light-alt);
+
+    &::before {
+      background: var(--iceberg-bg-light);
+      color: var(--iceberg-comment-light);
+    }
+  }
+}
+
+// Tag styling
+.tag,
+.tags a {
+  background: transparent;
+  color: var(--iceberg-blue);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+  font-size: 0.9em;
+
+  &:hover {
+    background: transparent;
+    color: var(--iceberg-cyan);
+    transform: translateY(-1px);
+  }
+}
+
+// Highlight boxes for callouts and notes
+.highlight-box {
+  background: var(--bg-secondary);
+  border-left: 4px solid var(--iceberg-blue);
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+
+  &.info {
+    border-left-color: var(--iceberg-cyan);
+  }
+
+  &.success {
+    border-left-color: var(--iceberg-green);
+  }
+
+  &.warning {
+    border-left-color: var(--iceberg-yellow);
+  }
+
+  &.danger {
+    border-left-color: var(--iceberg-red);
+  }
+}
+
+// Enhanced link hover states
+a {
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    color: var(--iceberg-cyan);
+  }
+
+  &.internal {
+    background-color: transparent !important;
+  }
+}
+
+// External links indicator
+a[href^="http"]::after {
+  content: " ↗";
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+
+// Internal links should not have the indicator
+a[href^="/"]::after,
+a[href^="#"]::after {
+  content: "";
+}
+
+// Better selection highlighting
+::selection {
+  background: var(--highlight);
+  color: var(--textNormal);
+}
+
+// Smooth theme transitions
+body,
+pre,
+code {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+// Enhanced focus states for accessibility
+a:focus,
+a:focus-visible {
+  outline: none !important;
+}
+
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--iceberg-blue);
+  outline-offset: 2px;
+}
+
+// Improve button styling
+button {
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Enhanced blockquote styling
+blockquote {
+  border-left: 4px solid var(--iceberg-blue);
+  padding-left: 1rem;
+  margin-left: 0;
+  color: var(--textMuted);
+  font-style: italic;
+
+  :root[saved-theme="light"] & {
+    color: var(--iceberg-comment-light);
+  }
+
+  :root[saved-theme="dark"] & {
+    color: var(--iceberg-comment-dark);
+  }
+}
+
+// Horizontal rule styling
+hr {
+  border: none;
+  border-top: 2px solid var(--iceberg-selection-dark);
+  margin: 2rem 0;
+
+  :root[saved-theme="light"] & {
+    border-top-color: var(--iceberg-selection-light);
+  }
+}
+
+// Table styling improvements
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+
+  th {
+    background: var(--bg-secondary);
+    color: var(--iceberg-blue);
+    font-weight: 600;
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 2px solid var(--iceberg-blue);
+  }
+
+  td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--iceberg-selection-dark);
+
+    :root[saved-theme="light"] & {
+      border-bottom-color: var(--iceberg-selection-light);
+    }
+  }
+
+  tr:hover {
+    background: var(--highlight);
+  }
+}
+
+// Import component overrides
+@import "./overrides";

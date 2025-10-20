@@ -1,0 +1,52 @@
+// Iceberg Color Variables
+// Based on the Iceberg color palette by cocopon
+// https://github.com/cocopon/iceberg.vim
+
+// Dark Mode Colors
+$iceberg-bg-dark: #161821;
+$iceberg-bg-dark-alt: #1e2132;
+$iceberg-fg-dark: #c6c8d1;
+$iceberg-comment-dark: #6b7089;
+$iceberg-selection-dark: #272c42;
+
+// Light Mode Colors
+$iceberg-bg-light: #e8e9ec;
+$iceberg-bg-light-alt: #d2d4de;
+$iceberg-fg-light: #33374c;
+$iceberg-comment-light: #8389a3;
+$iceberg-selection-light: #c0c5ce;
+
+// Accent Colors (universal)
+$iceberg-blue: #84a0c6;
+$iceberg-cyan: #89b8c2;
+$iceberg-green: #b4be82;
+$iceberg-yellow: #e2a478;
+$iceberg-orange: #c9a085;
+$iceberg-red: #e27878;
+$iceberg-purple: #a093c7;
+
+// Export as CSS variables for runtime use
+:root {
+  // Dark mode colors
+  --iceberg-bg-dark: #{$iceberg-bg-dark};
+  --iceberg-bg-dark-alt: #{$iceberg-bg-dark-alt};
+  --iceberg-fg-dark: #{$iceberg-fg-dark};
+  --iceberg-comment-dark: #{$iceberg-comment-dark};
+  --iceberg-selection-dark: #{$iceberg-selection-dark};
+
+  // Light mode colors
+  --iceberg-bg-light: #{$iceberg-bg-light};
+  --iceberg-bg-light-alt: #{$iceberg-bg-light-alt};
+  --iceberg-fg-light: #{$iceberg-fg-light};
+  --iceberg-comment-light: #{$iceberg-comment-light};
+  --iceberg-selection-light: #{$iceberg-selection-light};
+
+  // Accent colors
+  --iceberg-blue: #{$iceberg-blue};
+  --iceberg-cyan: #{$iceberg-cyan};
+  --iceberg-green: #{$iceberg-green};
+  --iceberg-yellow: #{$iceberg-yellow};
+  --iceberg-orange: #{$iceberg-orange};
+  --iceberg-red: #{$iceberg-red};
+  --iceberg-purple: #{$iceberg-purple};
+}

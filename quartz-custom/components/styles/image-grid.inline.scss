@@ -1,0 +1,33 @@
+body {
+	--image-grid-fit: cover;
+	--image-grid-background: transparent;
+	--img-grid-gap: 0.5rem;
+}
+@media (max-width:400pt) {
+	body {
+		--img-grid-gap: 0.25rem;
+	}
+}
+
+.img-grid-ratio {
+	--image-grid-fit: contain;
+}
+
+.img-grid-ratio {
+  --image-grid-fit: contain;
+}
+
+.img-grid {
+ p:has(>img ~ img) {
+      display: grid;
+      margin-block-start: var(--img-grid-gap);
+      margin-block-end: var(--img-grid-gap);
+      grid-column-gap: var(--img-grid-gap);
+      grid-row-gap: 0;
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      > img {
+        object-fit: var(--image-grid-fit);
+        align-self: stretch;
+      }
+    }
+}
