@@ -9,9 +9,10 @@ deps:
 # Update Quartz framework from upstream
 quartz-update:
   #!/usr/bin/env bash
-  rm -rf quartz package.json tsconfig.json globals.d.ts index.d.ts package-lock.json
-  mkdir -p quartz
+  rm -rf quartz package.json tsconfig.json globals.d.ts index.d.ts package-lock.json docs/quartz
+  mkdir -p quartz docs/quartz
   cp -r ../quartz/quartz/* quartz
+    cp -r ../quartz/docs/* docs/quartz
   cp -r ../quartz/package.json package.json
   cp -r ../quartz/tsconfig.json tsconfig.json
   cp -r ../quartz/globals.d.ts globals.d.ts
