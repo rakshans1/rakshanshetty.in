@@ -1,5 +1,8 @@
 @import "./iceberg.scss";
 
+header {
+  background-color: var(--color-bg-secondary);
+}
 .page-header {
   header {
     display: flex;

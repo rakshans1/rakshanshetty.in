@@ -1,0 +1,52 @@
+blog.localhost {
+  root * {env.HOME}/projects/node/rakshanshetty.in/public
+  encode gzip
+
+  # Check if static file exists, serve it directly
+  @static_exists file
+  handle @static_exists {
+    file_server
+  }
+
+  # Check if HTML file exists (with .html extension)
+  @html_exists file {path}.html
+  handle @html_exists {
+    try_files {path}.html
+    file_server
+  }
+
+  # Check for index.html in directory
+  @index_exists file {path}/index.html
+  handle @index_exists {
+    try_files {path}/index.html
+    file_server
+  }
+
+  handle {
+    reverse_proxy localhost:9020 {
+      # Active health check
+      health_uri /
+      health_port 9020
+      health_interval 3s
+      health_timeout 1s
+      health_status 2xx
+
+      # Fast failure detection
+      fail_duration 5s
+      max_fails 1
+
+      # Transport for quick timeout
+      transport http {
+        dial_timeout 500ms
+        response_header_timeout 1s
+      }
+    }
+  }
+
+  # Error handling for 404s and proxy failures
+  handle_errors {
+    root * {env.HOME}/projects/node/rakshanshetty.in/public
+    try_files {path} {path}.html {path}/index.html /{err.status_code}.html /404.html
+    file_server
+  }
+}

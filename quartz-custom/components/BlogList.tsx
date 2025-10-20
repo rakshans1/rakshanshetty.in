@@ -23,6 +23,12 @@ const BlogList: QuartzComponentConstructor = () => {
     fileData,
     allFiles,
   }: QuartzComponentProps) => {
+    // Only show on index page
+    const isIndex = fileData.frontmatter?.["index"];
+    if (!isIndex) {
+      return null;
+    }
+
     // Filter only blog posts
     const blogPosts = allFiles.filter(
       (f) => f.frontmatter?.["disable-index"] !== true,

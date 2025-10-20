@@ -9,7 +9,7 @@ export const Static: QuartzEmitterPlugin = () => ({
 	name: "CustomStatic",
 	async *emit({ argv, cfg }) {
 		// Small delay to ensure built-in Static plugin completes first
-		await new Promise((resolve) => setTimeout(resolve, 100));
+		await new Promise((resolve) => setTimeout(resolve, 200));
 
 		const staticPath = joinSegments(QUARTZ_CUSTOM, "static");
 		const fps = await glob("**", staticPath, cfg.configuration.ignorePatterns);

@@ -1,9 +1,9 @@
-import { FullSlug, joinSegments } from "../../../quartz/util/path"
-import { QuartzEmitterPlugin } from "../../../quartz/plugins/types"
-import customStyles from "../../styles/custom.scss"
-import { BuildCtx } from "../../../quartz/util/ctx"
-import { Features, transform } from "lightningcss"
-import { write } from "../../../quartz/plugins/emitters/helpers"
+import { FullSlug, joinSegments } from "../../../quartz/util/path";
+import { QuartzEmitterPlugin } from "../../../quartz/plugins/types";
+import customStyles from "../../styles/custom.scss";
+import { BuildCtx } from "../../../quartz/util/ctx";
+import { Features, transform } from "lightningcss";
+import { write } from "../../../quartz/plugins/emitters/helpers";
 
 export const CustomStyles: QuartzEmitterPlugin = () => {
   return {
@@ -22,7 +22,7 @@ export const CustomStyles: QuartzEmitterPlugin = () => {
           chrome: 109 << 16,
         },
         include: Features.MediaQueries,
-      })
+      });
 
       // Emit the custom stylesheet
       yield write({
@@ -30,8 +30,17 @@ export const CustomStyles: QuartzEmitterPlugin = () => {
         slug: "custom" as FullSlug,
         ext: ".css",
         content: transformedStyles.code.toString(),
-      })
+      });
     },
     async *partialEmit() {},
-  }
-}
+    externalResources: () => {
+      return {
+        css: [
+          {
+            content: "/custom.css",
+          },
+        ],
+      };
+    },
+  };
+};

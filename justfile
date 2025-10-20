@@ -31,8 +31,8 @@ build:
   npx quartz build
 
 # Development server with auto-rebuild
-dev:
-  npx quartz build --serve
+serve:
+  npx quartz build --serve --port 9020 --wsPort 9920
 
 # Complete deployment pipeline
 deploy: sync build

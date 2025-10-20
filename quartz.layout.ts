@@ -5,12 +5,9 @@ import { notesFilter } from "./quartz-custom/utils/filter";
 
 // Shared components across all pages
 export const sharedPageComponents: SharedLayout = {
-  head: CustomComponent.Head(),
-  header: [
-    CustomComponent.LDMeta(),
-    Component.PageTitle(),
-    CustomComponent.Bio(),
-  ],
+  head: Component.Head(),
+  header: [CustomComponent.LDMeta(), CustomComponent.Bio()],
+  afterBody: [],
   footer: CustomComponent.Footer({
     links: {
       GitHub: "https://github.com/rakshans1",
@@ -24,6 +21,9 @@ export const sharedPageComponents: SharedLayout = {
 // Layout for individual blog posts
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
+    Component.Breadcrumbs({
+      showCurrentPage: false,
+    }),
     CustomComponent.ArticleTitle(),
     CustomComponent.ContentMeta(),
     Component.TagList(),
@@ -31,18 +31,28 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [],
   right: [
-    Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
-    Component.RecentNotes({ limit: 5, showTags: false, filter: notesFilter }),
+    Component.DesktopOnly(Component.Backlinks()),
+    Component.DesktopOnly(
+      Component.RecentNotes({
+        title: "Recent blogs",
+        limit: 5,
+        showTags: false,
+        filter: notesFilter,
+      }),
+    ),
   ],
   afterBody: [CustomComponent.PrevNextNav(), CustomComponent.DisqusComments()],
 };
 
 // Layout for homepage and tag archive pages
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [CustomComponent.Bio(), CustomComponent.BlogList()],
-  left: [],
+  beforeBody: [
+    Component.PageTitle(),
+    CustomComponent.Bio(),
+    CustomComponent.BlogList(),
+  ],
+  left: [Component.Search()],
   right: [Component.Darkmode()],
   afterBody: [],
 };

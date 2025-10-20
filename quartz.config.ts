@@ -5,6 +5,7 @@ import * as CustomPlugins from "./quartz-custom/plugins";
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "Rakshan Shetty",
+    pageTitleSuffix: " | Rakshan Shetty",
     enableSPA: false,
     enablePopovers: true,
     analytics: {
@@ -68,7 +69,7 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
-      // CustomPlugins.Transformers.RemoveTags({ tags: ["blog"] }),
+      CustomPlugins.Transformers.RemoveTags({ tags: ["blog"] }),
       CustomPlugins.Transformers.Img(),
     ],
     filters: [Plugin.RemoveDrafts()],
@@ -81,12 +82,14 @@ const config: QuartzConfig = {
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: true,
-        rssFullHtml: true,
+        rssFullHtml: false,
+        includeEmptyFiles: false,
       }),
       Plugin.Assets(),
       Plugin.Static(),
       CustomPlugins.Emitters.Static(),
       CustomPlugins.Emitters.CustomStyles(),
+      Plugin.NotFoundPage(),
     ],
   },
 };
