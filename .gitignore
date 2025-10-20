@@ -60,7 +60,6 @@ public
 
 # Quartz files
 .quartz-cache/
-content/
 
 # Mac files
 .DS_Store
