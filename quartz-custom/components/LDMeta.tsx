@@ -1,117 +1,200 @@
-import { i18n } from "../../quartz/i18n"
-import { joinSegments } from "../../quartz/util/path"
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../../quartz/components/types"
-import { unescapeHTML } from "../../quartz/util/escape"
+import { i18n } from "../../quartz/i18n";
+import { joinSegments, resolveRelative, simplifySlug, slugifyFilePath } from "../../quartz/util/path";
+import {
+  QuartzComponent,
+  QuartzComponentConstructor,
+  QuartzComponentProps,
+} from "../../quartz/components/types";
+import { unescapeHTML } from "../../quartz/util/escape";
+import { trieFromAllFiles } from "../../quartz/util/ctx";
+
+// Helper function to parse Obsidian image syntax from frontmatter
+const parseObsidianImage = (imageField: string | undefined): string | undefined => {
+  if (!imageField) return undefined;
+
+  // Match: ![[filename.png]] or ![[filename.png|alt text]] or [[filename.png]]
+  const wikilinkMatch = imageField.match(/^!?\[\[([^\[\]\|]+)(\|[^\]]+)?\]\]$/);
+
+  if (wikilinkMatch) {
+    const filename = wikilinkMatch[1].trim();
+    // Slugify the path to match how Quartz processes it
+    return slugifyFilePath(filename as any);
+  }
+
+  // If it's already a URL or plain path, return as-is
+  return imageField;
+};
 
 export default (() => {
-  const LDMeta: QuartzComponent = ({
-    cfg,
-    fileData,
-  }: QuartzComponentProps) => {
-    const titleSuffix = cfg.pageTitleSuffix ?? ""
+  const LDMeta: QuartzComponent = ({ cfg, fileData, allFiles, ctx }: QuartzComponentProps) => {
+    const titleSuffix = cfg.pageTitleSuffix ?? "";
     const title =
-      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) +
+      titleSuffix;
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
-      unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description)
+      unescapeHTML(
+        fileData.description?.trim() ??
+          i18n(cfg.locale).propertyDefaults.description,
+      );
 
-    const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`)
+    const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`);
 
     // Url of current page
     const socialUrl =
-      fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
+      fileData.slug === "404"
+        ? url.toString()
+        : joinSegments(url.toString(), fileData.slug!);
 
-    const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
-    const ogImage = fileData.frontmatter?.image || ogImageDefaultPath
-    const isArticle = fileData.frontmatter?.tags?.includes("blog")
+    // Parse and resolve OG image from frontmatter
+    // socialImage is coalesced from socialImage/image/cover by frontmatter transformer
+    const parsedImagePath = parseObsidianImage(fileData.frontmatter?.socialImage);
+    const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`;
+
+    let ogImage = ogImageDefaultPath;
+    if (parsedImagePath) {
+      if (parsedImagePath.startsWith('http')) {
+        // Already an absolute URL
+        ogImage = parsedImagePath;
+      } else {
+        // Construct path: images are in assets/ directory alongside the markdown file
+        // Get the directory part of the slug (e.g., "blog" from "blog/post-name")
+        const slugParts = fileData.slug!.split('/');
+        const directory = slugParts.length > 1 ? slugParts.slice(0, -1).join('/') : '';
+        const imagePath = directory ? `${directory}/assets/${parsedImagePath}` : `assets/${parsedImagePath}`;
+        ogImage = `https://${cfg.baseUrl}/${imagePath}`;
+      }
+    }
+
+    // Check if this is a blog post by slug path (blog posts are in blog/ directory)
+    // Note: We can't use tags because the RemoveTags plugin filters out "blog" tag
+    const isArticle = fileData.slug?.startsWith("blog/");
 
     // Person schema (author)
     const personSchema = {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Rakshan Shetty",
-      "url": "https://rakshanshetty.in",
-      "sameAs": [
+      name: "Rakshan Shetty",
+      url: "https://rakshanshetty.in",
+      sameAs: [
         "https://twitter.com/rakshans2",
         "https://github.com/rakshans1",
-        "https://www.linkedin.com/in/rakshan-shetty"
+        "https://www.linkedin.com/in/rakshan-shetty",
       ],
-      "jobTitle": "Software Engineer",
-      "description": "Software engineer, Learning Web development and sharing my experience"
-    }
+      jobTitle: "Software Engineer",
+      description:
+        "Software engineer, Learning Web development and sharing my experience",
+    };
 
     // Article schema (for blog posts)
-    const articleSchema = isArticle ? {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": title,
-      "description": description,
-      "image": ogImage,
-      "datePublished": fileData.frontmatter?.date,
-      "dateModified": fileData.frontmatter?.modified || fileData.frontmatter?.date,
-      "author": personSchema,
-      "publisher": {
-        "@type": "Organization",
-        "name": "Rakshan Shetty",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://rakshanshetty.in/static/profile-pic.jpg"
+    const articleSchema = isArticle
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: title,
+          description: description,
+          image: ogImage,
+          datePublished: fileData.frontmatter?.date,
+          dateModified:
+            fileData.frontmatter?.modified || fileData.frontmatter?.date,
+          author: personSchema,
+          publisher: {
+            "@type": "Organization",
+            name: "Rakshan Shetty",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://rakshanshetty.in/static/profile-pic.jpg",
+            },
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": socialUrl,
+          },
         }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": socialUrl
-      }
-    } : null
+      : null;
 
     // WebSite schema (for homepage)
-    const websiteSchema = fileData.slug === "index" ? {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": "https://rakshanshetty.in",
-      "name": "Rakshan Shetty",
-      "description": description
-    } : null
+    const websiteSchema =
+      fileData.slug === "index"
+        ? {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            url: "https://rakshanshetty.in",
+            name: "Rakshan Shetty",
+            description: description,
+          }
+        : null;
 
-    // BreadcrumbList schema
+    // BreadcrumbList schema - dynamically resolved like Breadcrumbs component
+    const trie = (ctx.trie ??= trieFromAllFiles(allFiles));
+    const slugParts = fileData.slug!.split("/");
+    const pathNodes = trie.ancestryChain(slugParts);
+
+    const breadcrumbItems = pathNodes
+      ? pathNodes.map((node, idx) => {
+          const displayName = idx === 0
+            ? "Home"
+            : node.displayName.replaceAll("-", " ");
+          const nodePath = idx === pathNodes.length - 1
+            ? "" // Empty path for current page
+            : resolveRelative(fileData.slug!, simplifySlug(node.slug));
+          const itemUrl = idx === 0
+            ? url.toString()
+            : joinSegments(url.toString(), simplifySlug(node.slug));
+
+          return {
+            "@type": "ListItem",
+            position: idx + 1,
+            name: displayName,
+            item: itemUrl,
+          };
+        })
+      : [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: url.toString(),
+          },
+        ];
+
     const breadcrumbSchema = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://rakshanshetty.in"
-        },
-        ...(fileData.slug !== "index" ? [{
-          "@type": "ListItem",
-          "position": 2,
-          "name": title,
-          "item": socialUrl
-        }] : [])
-      ]
-    }
+      itemListElement: breadcrumbItems,
+    };
 
     return (
       <>
         {/* Structured Data */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(personSchema)}} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
         {articleSchema && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(articleSchema)}} />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+          />
         )}
         {websiteSchema && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema)}} />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+          />
         )}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
       </>
-    )
-  }
+    );
+  };
 
   LDMeta.beforeDOMLoaded = `
     // Component runs in head, no beforeDOMLoaded script needed
-  `
+  `;
 
-  return LDMeta
-}) satisfies QuartzComponentConstructor
+  return LDMeta;
+}) satisfies QuartzComponentConstructor;

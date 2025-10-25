@@ -6,7 +6,13 @@ import { notesFilter } from "./quartz-custom/utils/filter";
 // Shared components across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [CustomComponent.LDMeta(), CustomComponent.Bio()],
+  header: [
+    CustomComponent.LDMeta(),
+    Component.ConditionalRender({
+      component: CustomComponent.Bio(),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+  ],
   afterBody: [],
   footer: CustomComponent.Footer({
     links: {
@@ -24,6 +30,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Breadcrumbs({
       showCurrentPage: false,
     }),
+    CustomComponent.CoverImage(),
     CustomComponent.ArticleTitle(),
     CustomComponent.ContentMeta(),
     Component.TagList(),
@@ -49,7 +56,10 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [
     Component.PageTitle(),
-    CustomComponent.Bio(),
+    Component.ConditionalRender({
+      component: CustomComponent.Bio(),
+      condition: (page) => page.fileData.slug === "index",
+    }),
     CustomComponent.BlogList(),
   ],
   left: [Component.Search()],

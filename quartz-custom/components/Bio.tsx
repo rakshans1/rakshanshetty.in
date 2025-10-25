@@ -7,12 +7,6 @@ import * as Component from "../../quartz/components";
 
 const Bio: QuartzComponentConstructor = () => {
   const Bio = (props: QuartzComponentProps) => {
-    const { fileData } = props;
-    // Only show on index page
-    if (fileData.slug !== "index") {
-      return null;
-    }
-
     return (
       <div>
         {Component.PageTitle()(props)}

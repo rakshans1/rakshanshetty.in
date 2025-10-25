@@ -4,70 +4,84 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal blog built with Gatsby 4, hosted on Netlify. The blog features markdown-based content with support for tags, Disqus comments, RSS feed, and Google Analytics tracking.
+This is a personal blog built with Quartz 4, hosted on Netlify. The blog features markdown-based content with support for tags, Disqus comments, and is optimized for digital garden/second brain workflows.
 
 ## Development Commands
 
-- `yarn develop` or `npm start` - Start development server (typically on http://localhost:8000)
-- `yarn build` or `npm run build` - Build for production (also copies _redirects file to public/)
-- `yarn serve` - Serve the production build locally
-- `yarn clean` - Clean Gatsby cache and public directory
-- `yarn format` - Format all JS, JSX, JSON, and MD files with Prettier
+- `npx quartz build --serve` - Start development server with live preview
+- `npx quartz build` - Build for production
+- `npx quartz sync` - Sync content from Git submodule
+- `npx quartz create` - Initialize new Quartz project (rarely needed)
 
 ## Code Style
 
-- Prettier is configured and runs on pre-commit via husky + lint-staged
-- Code style: no semicolons, double quotes, 2-space tabs, LF line endings, ES5 trailing commas
-- **Never commit without formatting** - the pre-commit hook will auto-format staged files
+- TypeScript/TSX for components
+- SCSS for styling
+- Follow existing code patterns in `quartz-custom/` directory
 
 ## Architecture
 
 ### Content Structure
 
-- Blog posts live in `content/blog/` as markdown files with frontmatter
-- Each post is in its own directory (e.g., `content/blog/my-post/index.md`)
-- Frontmatter fields: `title`, `date`, `modified`, `description`, `tags`, `image`, `banner`, `disqus_id`
-- Static assets are in `content/assets/`
+- Blog posts live in `content/` as markdown files with frontmatter
+- Content is managed as a Git submodule
+- Frontmatter fields: `title`, `date`, `modified`, `description`, `tags`, `disqus_id`
+- Static assets are in `quartz/static/`
 
-### Page Generation (gatsby-node.js)
+### Layout Configuration (quartz.layout.ts)
 
-- **Blog posts**: Dynamically created from markdown files using `src/templates/blog-post.js`
-- **Tag pages**: Automatically created for each unique tag using `src/templates/tags.js`
-- URL structure: Posts use their directory name as slug, tags use `/tag/kebab-case-tag/`
-- Navigation: Each post page includes previous/next post links
+- **Shared layout**: Components that appear on all pages (header, footer)
+- **Content page layout**: Layout for individual blog posts
+- **List page layout**: Layout for homepage and tag archive pages
+- Uses Quartz's layout composition system with components like `ConditionalRender`, `DesktopOnly`, `MobileOnly`
 
-### Key Components
+### Custom Components (quartz-custom/components/)
 
-- `src/components/layout.js` - Main layout wrapper with theme toggle
-- `src/components/bio.js` - Author bio component
-- `src/components/seo.js` - SEO/meta tags component with structured data
-- `src/pages/index.js` - Homepage listing all posts
-- `src/templates/blog-post.js` - Individual post template with Disqus integration
-- `src/templates/tags.js` - Tag archive pages
+- `Bio.tsx` - Author bio component (shown only on index page)
+- `ArticleTitle.tsx` - Blog post title component
+- `ContentMeta.tsx` - Post metadata (date, reading time)
+- `BlogList.tsx` - List of blog posts
+- `DisqusComments.tsx` - Disqus integration
+- `Footer.tsx` - Site footer with social links
+- `LDMeta.tsx` - JSON-LD structured data
+- `PrevNextNav.tsx` - Previous/next post navigation
 
-### Styling & Theme
+### Styling
 
-- Typography powered by Typography.js with Inter font (configured in `src/utils/theme.js`)
-- Global styles in `src/utils/global.css`
-- Dark mode support via CSS custom properties (theme toggle in layout)
+- Custom styles in `quartz-custom/components/styles/`
+- Uses SCSS modules
+- Dark mode support built into Quartz
 
-### Plugins & Features
+### Quartz Components
 
-- **Images**: gatsby-plugin-image with gatsby-remark-images for optimized images, medium-zoom for image lightbox
-- **Syntax highlighting**: gatsby-remark-prismjs for code blocks
-- **SEO**: Sitemap, RSS feed, manifest, Google Analytics
-- **Comments**: Disqus integration
-- **Offline support**: gatsby-plugin-offline for PWA functionality
+Quartz provides built-in components:
+- `Component.PageTitle()` - Page title
+- `Component.Search()` - Full-text search
+- `Component.Darkmode()` - Dark mode toggle
+- `Component.TableOfContents()` - TOC for articles
+- `Component.Backlinks()` - Shows pages linking to current page
+- `Component.RecentNotes()` - Recent posts list
+- `Component.Breadcrumbs()` - Breadcrumb navigation
+- `Component.TagList()` - Tags for posts
+
+### Higher-Order Components
+
+- `Component.ConditionalRender()` - Conditionally show components based on page properties
+- `Component.DesktopOnly()` - Only show on desktop
+- `Component.MobileOnly()` - Only show on mobile
 
 ## Important Files
 
-- `gatsby-config.js` - Site metadata and plugin configuration
-- `gatsby-node.js` - Dynamic page generation logic
-- `_redirects` - Netlify redirect rules (copied to public/ during build)
+- `quartz.config.ts` - Site configuration and metadata
+- `quartz.layout.ts` - Layout configuration (where components are placed)
+- `quartz-custom/` - Custom components and utilities
+- `content/` - Git submodule containing markdown content
+- `docs/quartz/` - Quartz documentation
 
 ## Adding New Posts
 
-1. Create a new directory under `content/blog/your-post-name/`
-2. Add `index.md` with required frontmatter (title, date, tags, description)
-3. Images go in the same directory and are referenced relatively
-4. Run `yarn develop` to preview locally
+1. Navigate to the `content/` directory (Git submodule)
+2. Add `your-post-name.md` with required frontmatter (title, date, tags, description)
+3. Run `npx quartz build --serve` to preview locally
+4. Commit and push to the content repository
+5. Run `npx quartz sync` to update the submodule
