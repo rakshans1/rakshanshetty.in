@@ -126,18 +126,8 @@ class ObsidianSync {
             const destAssetsDir = path.join(destDir, "assets");
             await fs.mkdir(destAssetsDir, { recursive: true });
 
-            // Copy all files from assets directory
-            const assetFiles = await fs.readdir(assetsDir, {
-                withFileTypes: true,
-            });
-            for (const file of assetFiles) {
-                if (file.isFile()) {
-                    const sourcePath = path.join(assetsDir, file.name);
-                    const destPath = path.join(destAssetsDir, file.name);
-                    await fs.copyFile(sourcePath, destPath);
-                    console.log(chalk.green(`✓ Copied asset: ${file.name}`));
-                }
-            }
+            // Recursively copy all files and directories from assets directory
+            await this.copyDirectoryRecursive(assetsDir, destAssetsDir);
         } catch (error) {
             console.error(
                 chalk.yellow(
@@ -145,6 +135,29 @@ class ObsidianSync {
                 ),
                 error,
             );
+        }
+    }
+
+    /**
+     * Recursively copy a directory and all its contents
+     */
+    async copyDirectoryRecursive(sourceDir, destDir) {
+        await fs.mkdir(destDir, { recursive: true });
+
+        const entries = await fs.readdir(sourceDir, { withFileTypes: true });
+
+        for (const entry of entries) {
+            const sourcePath = path.join(sourceDir, entry.name);
+            const destPath = path.join(destDir, entry.name);
+
+            if (entry.isDirectory()) {
+                // Recursively copy subdirectories
+                await this.copyDirectoryRecursive(sourcePath, destPath);
+            } else if (entry.isFile()) {
+                // Copy file
+                await fs.copyFile(sourcePath, destPath);
+                console.log(chalk.green(`✓ Copied asset: ${path.relative(destDir, destPath)}`));
+            }
         }
     }
 
