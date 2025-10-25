@@ -1,0 +1,1561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<disqus xmlns="http://disqus.com" xmlns:dsq="http://disqus.com/disqus-internals" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://disqus.com/api/schemas/1.0/disqus.xsd http://disqus.com/api/schemas/1.0/disqus-internals.xsd">
+<category dsq:id="5738029">
+<forum>rakshanshetty</forum>
+<title>General</title>
+<isDefault>true</isDefault>
+</category>
+<thread dsq:id="5269076835">
+<id>ghost-2</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://rakshanshetty.in/my-college-projects/</link>
+<title>My College Projects</title>
+<message />
+<createdAt>2016-11-01T03:51:53Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="5269210690">
+<id>ghost-35</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://rakshanshetty.in/docstash-personal-cloud-storage/</link>
+<title>Docstash - Personal Cloud Storage</title>
+<message />
+<createdAt>2016-11-01T05:43:41Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="5275848271">
+<id>about</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://rakshanshetty.in/about/</link>
+<title>Rakshan Shetty's Blog</title>
+<message />
+<createdAt>2016-11-03T16:19:44Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="5901984921">
+<id>mapping-caps-lock-to-esc-in-linux</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://rakshanshetty.in/mapping-caps-lock-to-esc-in-linux/</link>
+<title>Mapping Caps Lock to Esc in Linux</title>
+<message />
+<createdAt>2017-06-12T04:07:15Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="5935587505">
+<id>ghost-594ca1cc05c4dd25983573b3</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:3000/managing-users/</link>
+<title>Managing Ghost users</title>
+<message />
+<createdAt>2017-06-23T10:14:37Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="5935757889">
+<id>ghost-594ca1cd05c4dd25983573b5</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:3000/the-editor/</link>
+<title>Using the Ghost editor</title>
+<message />
+<createdAt>2017-06-23T11:42:54Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="5935990379">
+<id>ghost-594ca1cc05c4dd25983573b2</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/private-sites/</link>
+<title>Making your site private</title>
+<message />
+<createdAt>2017-06-23T13:38:44Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="5938121443">
+<id>ghost-594e0d7444b0dc410ccc03bc</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/welcome/</link>
+<title>Welcome to Ghost</title>
+<message />
+<createdAt>2017-06-24T07:41:46Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="5945152653">
+<id>ghost-1</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:3000/welcome-to-ghost/</link>
+<title>Welcome to Ghost</title>
+<message />
+<createdAt>2017-06-27T07:03:10Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="5945455356">
+<id>ghost-4</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:3000/docstash-personal-cloud-storage/</link>
+<title>Docstash - Personal Cloud Storage built with Reactjs, Node and MongoDb</title>
+<message />
+<createdAt>2017-06-27T09:50:34Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="5950445471">
+<id>ghost-5</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://wingsfoundation.herokuapp.com/international-womens-day/</link>
+<title>International women's day</title>
+<message />
+<createdAt>2017-06-29T07:35:41Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="5950603246">
+<id>ghost-6</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://wingsfoundation.herokuapp.com/about-wings-foundation/</link>
+<title>About Wings Foundation — Wings Foundation</title>
+<message />
+<createdAt>2017-06-29T09:07:11Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="6226470346">
+<id>ghost-39</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://rakshanshetty.in/learning-angular-4/</link>
+<title>Learning Angular 4 — Rakshan Shetty</title>
+<message />
+<createdAt>2017-10-19T16:14:45Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="6226485828">
+<id>ghost-40</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://rakshanshetty.in/dotfile/</link>
+<title>Dotfile — Rakshan Shetty</title>
+<message />
+<createdAt>2017-10-19T16:22:10Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="6396839547">
+<id>debugging-wordpress-php-with-vs-code-and-lamp</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://rakshanshetty.in/debugging-wordpress-php-with-vs-code-and-lamp/</link>
+<title>Debugging WordPress PHP with VS Code and LAMP</title>
+<message />
+<createdAt>2018-01-07T05:14:54Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="6397081333">
+<id>8925d806-3cb2-5a57-a7f0-5456e3813918</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://rakshanshetty.in/install-lamp-with-one-command-linux-apache-mysql-php-2/</link>
+<title>How to Install LAMP on Ubuntu with one command — Rakshan Shetty</title>
+<message />
+<createdAt>2018-01-07T08:04:09Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="7873631904">
+<id>b251608b-538c-5a94-bffc-eeb34d6e4303</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8000/docstash-personal-cloud-storage/</link>
+<title>Docstash - Personal Cloud Storage</title>
+<message />
+<createdAt>2020-02-16T13:28:33Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="7873664906">
+<id>vim-tips</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/vim-tips/</link>
+<title>Vim Tips</title>
+<message />
+<createdAt>2020-02-16T13:52:20Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="7882649859">
+<id>a3b05e98-7315-5ce8-8092-94146eb286d4</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/native-lazy-image-loading-with-react/</link>
+<title>Native image lazy loading with react</title>
+<message />
+<createdAt>2020-02-22T04:57:02Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="7883137360">
+<id>570bfbfb-8548-5f0c-a196-7330f0de98a2</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/native-lazy-loading-image-with-react/</link>
+<title>Native lazy loading image with React</title>
+<message />
+<createdAt>2020-02-22T14:03:40Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="8017087495">
+<id>nodejs-http-keep-alive</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/nodejs-http-keep-alive/</link>
+<title>Reusing connection with HTTP Keep-Alive in Nodejs</title>
+<message />
+<createdAt>2020-05-10T10:07:28Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="8018778855">
+<id>fb9acf1f-eb2b-550c-a1b0-649207561242</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/using-yarn-lock-as-gitlab-cache/</link>
+<title>Using yarn.lock/package-lock.json as Gitlab CI/CD cache</title>
+<message />
+<createdAt>2020-05-11T09:23:40Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="8018829078">
+<id>using-lock-file-as-gitlab-cache-key</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/using-lock-file-as-gitlab-cache-key/</link>
+<title>Using lock file as Gitlab CI/CD cache key</title>
+<message />
+<createdAt>2020-05-11T10:06:13Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9051324072">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty-in.translate.goog/nodejs-http-keep-alive/?_x_tr_sl=auto&amp;_x_tr_tl=pt&amp;_x_tr_hl=pt-BR</link>
+<title>Reusing connection with HTTP Keep-Alive in Nodejs</title>
+<message />
+<createdAt>2022-03-02T14:03:31Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9312040562">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/nodejs-http-keep-alive/?_sm_nck=1</link>
+<title>Reusing connection with HTTP Keep-Alive in Nodejs</title>
+<message />
+<createdAt>2022-08-17T14:29:59Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9379481694">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8000/install-lamp-with-one-command-linux-apache-mysql-php-2/</link>
+<title />
+<message />
+<createdAt>2022-10-02T12:21:26Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9379481786">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8000/native-lazy-loading-image-with-react/</link>
+<title />
+<message />
+<createdAt>2022-10-02T12:21:30Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9379481847">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8000/nodejs-http-keep-alive/</link>
+<title />
+<message />
+<createdAt>2022-10-02T12:21:34Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9379482034">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8000/debugging-wordpress-php-with-vs-code-and-lamp/</link>
+<title />
+<message />
+<createdAt>2022-10-02T12:21:46Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9379482696">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8000/vim-tips/</link>
+<title />
+<message />
+<createdAt>2022-10-02T12:22:26Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9379484779">
+<id>dee5e550-d907-5871-b62b-4551e5bcda41</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/about/setup-elixir-with-nix/</link>
+<title>Setting up Elixir with nix</title>
+<message />
+<createdAt>2022-10-02T12:24:36Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9379484793">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8000/about/setup-elixir-with-nix/</link>
+<title />
+<message />
+<createdAt>2022-10-02T12:24:37Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9379485159">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8000/about/</link>
+<title />
+<message />
+<createdAt>2022-10-02T12:25:00Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9379561731">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://deploy-preview-14--rakshanshetty.netlify.app/about/setup-elixir-with-nix/</link>
+<title>Setting up Elixir with Nix</title>
+<message />
+<createdAt>2022-10-02T13:31:55Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9385081832">
+<id>setup-elixir-with-nix</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/setup-elixir-with-nix/</link>
+<title>Setting up Elixir with Nix</title>
+<message />
+<createdAt>2022-10-06T05:10:18Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9394260871">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://deploy-preview-15--rakshanshetty.netlify.app/setup-elixir-with-nix/</link>
+<title>Setting up Elixir with Nix</title>
+<message />
+<createdAt>2022-10-12T08:23:00Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9400448705">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8000/setup-elixir-with-nix/</link>
+<title />
+<message />
+<createdAt>2022-10-16T10:57:00Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9400449046">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8000/using-lock-file-as-gitlab-cache-key/</link>
+<title />
+<message />
+<createdAt>2022-10-16T10:57:23Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9410031977">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.netlify.app/about/</link>
+<title>Rakshan Shetty's Blog</title>
+<message />
+<createdAt>2022-10-22T11:19:41Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9471446201">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty-in.translate.goog/using-lock-file-as-gitlab-cache-key/?_x_tr_sl=en&amp;_x_tr_tl=ru&amp;_x_tr_hl=ru&amp;_x_tr_pto=sc</link>
+<title>Using lock file as Gitlab CI/CD cache key</title>
+<message />
+<createdAt>2022-12-01T12:50:09Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9540878789">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty-in.translate.goog/nodejs-http-keep-alive/?_x_tr_sl=en&amp;_x_tr_tl=es&amp;_x_tr_hl=es-419&amp;_x_tr_pto=sc</link>
+<title>Reusing connection with HTTP Keep-Alive in Nodejs</title>
+<message />
+<createdAt>2023-01-18T18:36:14Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="9953052188">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty-in.translate.goog/nodejs-http-keep-alive/?_x_tr_sl=en&amp;_x_tr_tl=ja&amp;_x_tr_hl=ja&amp;_x_tr_pto=sc</link>
+<title>Reusing connection with HTTP Keep-Alive in Nodejs</title>
+<message />
+<createdAt>2023-11-28T05:48:56Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10615001527">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty-in.translate.goog/setup-elixir-with-nix/?_x_tr_sl=auto&amp;_x_tr_tl=bm-Nkoo&amp;_x_tr_hl=en</link>
+<title>Setting up Elixir with Nix</title>
+<message />
+<createdAt>2025-09-04T21:58:21Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10676799722">
+<id>index</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/index</link>
+<title>Rakshan Shetty</title>
+<message />
+<createdAt>2025-10-19T17:36:12Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10676799879">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/</link>
+<title />
+<message />
+<createdAt>2025-10-19T17:36:18Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10676824840">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/setup-elixir-with-nix</link>
+<title />
+<message />
+<createdAt>2025-10-19T17:51:03Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10676826321">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/nodejs-http-keep-alive</link>
+<title />
+<message />
+<createdAt>2025-10-19T17:51:58Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10676839360">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/using-lock-file-as-gitlab-cache-key</link>
+<title />
+<message />
+<createdAt>2025-10-19T18:01:13Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10676840640">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/debugging-wordpress-php-with-vs-code-and-lamp</link>
+<title />
+<message />
+<createdAt>2025-10-19T18:02:10Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677044596">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/my-college-projects</link>
+<title />
+<message />
+<createdAt>2025-10-19T20:15:07Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677045277">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/docstash-personal-cloud-storage</link>
+<title />
+<message />
+<createdAt>2025-10-19T20:15:30Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677681238">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/vim-tips</link>
+<title />
+<message />
+<createdAt>2025-10-20T03:50:52Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677730589">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/mapping-caps-lock-to-esc-in-linux</link>
+<title />
+<message />
+<createdAt>2025-10-20T04:31:50Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677759514">
+<id>blog/setup-elixir-with-nix</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/setup-elixir-with-nix</link>
+<title>Setting up Elixir with Nix</title>
+<message />
+<createdAt>2025-10-20T04:50:25Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677766882">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/blog/setup-elixir-with-nix</link>
+<title />
+<message />
+<createdAt>2025-10-20T04:56:16Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677766986">
+<id>blog/using-lock-file-as-gitlab-cache-key</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/using-lock-file-as-gitlab-cache-key</link>
+<title>Using lock file as Gitlab CI/CD cache key</title>
+<message />
+<createdAt>2025-10-20T04:56:21Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677767073">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/blog/docstash-personal-cloud-storage</link>
+<title />
+<message />
+<createdAt>2025-10-20T04:56:26Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677795581">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/blog/my-college-projects</link>
+<title />
+<message />
+<createdAt>2025-10-20T05:17:38Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677799329">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/blog/using-lock-file-as-gitlab-cache-key</link>
+<title />
+<message />
+<createdAt>2025-10-20T05:20:50Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677814330">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/about</link>
+<title />
+<message />
+<createdAt>2025-10-20T05:32:51Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677817180">
+<id>blog/debugging-wordpress-php-with-vs-code-and-lamp</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/debugging-wordpress-php-with-vs-code-and-lamp</link>
+<title>Debugging WordPress PHP with VS Code and LAMP</title>
+<message />
+<createdAt>2025-10-20T05:34:50Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677817211">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/blog/debugging-wordpress-php-with-vs-code-and-lamp</link>
+<title />
+<message />
+<createdAt>2025-10-20T05:34:51Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677818840">
+<id>blog/learning-angular-4</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/learning-angular-4</link>
+<title>Learning Angular 4</title>
+<message />
+<createdAt>2025-10-20T05:35:56Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677818855">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>http://localhost:8080/blog/learning-angular-4</link>
+<title />
+<message />
+<createdAt>2025-10-20T05:35:56Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10677922392">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://blog.localhost/blog/setup-elixir-with-nix</link>
+<title />
+<message />
+<createdAt>2025-10-20T06:49:43Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10678372924">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/docstash-personal-cloud-storage</link>
+<title>Docstash - Personal Cloud Storage</title>
+<message />
+<createdAt>2025-10-20T11:38:24Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10678374406">
+<id>blog/install-lamp-with-one-command-linux-apache-mysql-php-2</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/install-lamp-with-one-command-linux-apache-mysql-php-2</link>
+<title>Install LAMP with one command - Linux Apache MySQL PHP</title>
+<message />
+<createdAt>2025-10-20T11:39:05Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10678408440">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://blog.localhost/</link>
+<title />
+<message />
+<createdAt>2025-10-20T11:56:42Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10678408610">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://blog.localhost/about</link>
+<title />
+<message />
+<createdAt>2025-10-20T11:56:48Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10678418057">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty-in.pages.dev/</link>
+<title>Home | Rakshan Shetty</title>
+<message />
+<createdAt>2025-10-20T12:02:05Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10678937328">
+<id>blog/native-lazy-loading-image-with-react</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/native-lazy-loading-image-with-react</link>
+<title>Native lazy loading image with React</title>
+<message />
+<createdAt>2025-10-20T16:08:39Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10678943712">
+<id>blog/nodejs-http-keep-alive</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/nodejs-http-keep-alive</link>
+<title>Reusing connection with HTTP Keep-Alive in Nodejs</title>
+<message />
+<createdAt>2025-10-20T16:11:59Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10679000375">
+<id>blog/vim-tips</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/vim-tips</link>
+<title>Vim Tips</title>
+<message />
+<createdAt>2025-10-20T16:35:05Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10679003749">
+<id>blog/mapping-caps-lock-to-esc-in-linux</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/mapping-caps-lock-to-esc-in-linux</link>
+<title>Mapping Caps Lock to Esc in Linux</title>
+<message />
+<createdAt>2025-10-20T16:36:20Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10681376522">
+<id>blog/quartz-obsidian-multi-site-publishing</id>
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/quartz-obsidian-multi-site-publishing</link>
+<title>Building a Multi-Site Publishing System with Quartz and Obsidian</title>
+<message />
+<createdAt>2025-10-21T14:29:58Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10681376563">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://blog.localhost/blog/quartz-obsidian-multi-site-publishing</link>
+<title />
+<message />
+<createdAt>2025-10-21T14:29:59Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10682403179">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://rakshanshetty.in/blog/my-college-projects</link>
+<title>My College Projects</title>
+<message />
+<createdAt>2025-10-22T01:09:55Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10689027721">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://blog.localhost/blog/docstash-personal-cloud-storage</link>
+<title />
+<message />
+<createdAt>2025-10-24T17:35:41Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<thread dsq:id="10690298991">
+<id />
+<forum>rakshanshetty</forum>
+<category dsq:id="5738029" />
+<link>https://blog.localhost/blog/native-lazy-loading-image-with-react</link>
+<title />
+<message />
+<createdAt>2025-10-25T06:21:07Z</createdAt>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<isClosed>false</isClosed>
+<isDeleted>false</isDeleted>
+</thread>
+<post dsq:id="3460870228">
+<id />
+<message><![CDATA[<p>How to deploy your sorce code to heroku</p>]]></message>
+<createdAt>2017-08-10T11:16:38Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>sobit kumar</name>
+<isAnonymous>false</isAnonymous>
+<username>sobit_kumar</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3460870885">
+<id />
+<message><![CDATA[<p>Please add tutorial to deploy your repo on heroku its awesome</p>]]></message>
+<createdAt>2017-08-10T11:17:16Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>sobit kumar</name>
+<isAnonymous>false</isAnonymous>
+<username>sobit_kumar</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3460898376">
+<id />
+<message><![CDATA[<p>Thanks sobit...I Will update post in few days and add tutorial..</p>]]></message>
+<createdAt>2017-08-10T11:42:10Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3462232356">
+<id />
+<message><![CDATA[<p>Thanks for your quick reply. Please add the tutorial as soon as possible. Waiting for your tutorial. Again thank you very much for your reply. :)</p>]]></message>
+<createdAt>2017-08-11T03:10:31Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>sobit kumar</name>
+<isAnonymous>false</isAnonymous>
+<username>sobit_kumar</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3466720649">
+<id />
+<message><![CDATA[<p>Still checking your website daily for tutorial :(</p>]]></message>
+<createdAt>2017-08-14T03:05:54Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>sobit kumar</name>
+<isAnonymous>false</isAnonymous>
+<username>sobit_kumar</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3466844273">
+<id />
+<message><![CDATA[<p>I am little busy in job...will update post tomorrow.. sorry for delay</p>]]></message>
+<createdAt>2017-08-14T05:51:50Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3466852209">
+<id />
+<message><![CDATA[<p>Ok Raxx Thanks a lot. I Will check tomorrow :P</p>]]></message>
+<createdAt>2017-08-14T06:04:48Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>sobit kumar</name>
+<isAnonymous>false</isAnonymous>
+<username>sobit_kumar</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3468573657">
+<id />
+<message><![CDATA[<p><a href="https://drive.google.com/file/d/0B5FKToPv769iVVZRUURhSlZTN2s/view?usp=sharing" rel="nofollow noopener" target="_blank" title="https://drive.google.com/file/d/0B5FKToPv769iVVZRUURhSlZTN2s/view?usp=sharing">https://drive.google.com/fi...</a></p><p>Add your config in config/secret.js file</p><p>Follow this tutorial to host <br><a href="https://scotch.io/tutorials/use-mongodb-with-a-node-application-on-heroku" rel="nofollow noopener" target="_blank" title="https://scotch.io/tutorials/use-mongodb-with-a-node-application-on-heroku">https://scotch.io/tutorials...</a></p><p>Add mega username and password in secret file.<br>You can use mlab for mongodb</p>]]></message>
+<createdAt>2017-08-15T05:47:25Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3470286977">
+<id />
+<message><![CDATA[<p>Thank you so much raxx. I will try to deploy today. :)</p>]]></message>
+<createdAt>2017-08-16T04:05:09Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>sobit kumar</name>
+<isAnonymous>false</isAnonymous>
+<username>sobit_kumar</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3470527579">
+<id />
+<message><![CDATA[<p>Hi i think this process is required credit card.( to install mongo add on )</p>]]></message>
+<createdAt>2017-08-16T09:20:17Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>sobit kumar</name>
+<isAnonymous>false</isAnonymous>
+<username>sobit_kumar</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3471011514">
+<id />
+<message><![CDATA[<p>Mlab is free..try it<br><a href="https://mlab.com" rel="nofollow noopener" target="_blank" title="https://mlab.com">https://mlab.com</a></p>]]></message>
+<createdAt>2017-08-16T15:25:20Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3472172433">
+<id />
+<message><![CDATA[<p>really sorry but unable to create i am not a professional programmer everything i have learn is from YouTube.   :(<br>Please upload step by step description or Video tutorial ( most preferred ). Whenever you have time. i know you are busy in your work.</p>]]></message>
+<createdAt>2017-08-17T04:15:33Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>sobit kumar</name>
+<isAnonymous>false</isAnonymous>
+<username>sobit_kumar</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3491821170">
+<id />
+<message><![CDATA[<p>@sobit_kumar:disqus  are you able to host..??? if any query you can ping me on hangout <br>shetty.raxx555@gmail.com</p>]]></message>
+<createdAt>2017-08-29T03:59:42Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3504158872">
+<id />
+<message><![CDATA[<p>sorry i wasn't able to host :( i tried to deploy on heroku but heroku suspended my app :(</p>]]></message>
+<createdAt>2017-09-06T03:29:50Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>sobit kumar</name>
+<isAnonymous>false</isAnonymous>
+<username>sobit_kumar</username>
+</author>
+<thread dsq:id="5269210690" />
+</post>
+<post dsq:id="3504279847">
+<id />
+<message><![CDATA[<p>It will not work on heroku...they have disabled torrent</p>]]></message>
+<createdAt>2017-09-06T06:08:57Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<thread dsq:id="5269210690" />
+<parent dsq:id="3504158872" />
+</post>
+<post dsq:id="3518438893">
+<id />
+<message><![CDATA[<p>oh ok thanks for your reply :)</p>]]></message>
+<createdAt>2017-09-15T08:10:49Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>sobit kumar</name>
+<isAnonymous>false</isAnonymous>
+<username>sobit_kumar</username>
+</author>
+<thread dsq:id="5269210690" />
+<parent dsq:id="3504279847" />
+</post>
+<post dsq:id="3817230252">
+<id />
+<message><![CDATA[<p>Thank you! Fantastic... :^)</p>]]></message>
+<createdAt>2018-03-21T16:12:56Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Francis JS</name>
+<isAnonymous>false</isAnonymous>
+<username>francisjs</username>
+</author>
+<thread dsq:id="5269076835" />
+</post>
+<post dsq:id="3879247919">
+<id />
+<message><![CDATA[<p>Hey</p>]]></message>
+<createdAt>2018-04-30T13:16:32Z</createdAt>
+<isDeleted>true</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Ashish Sharma</name>
+<isAnonymous>false</isAnonymous>
+<username>disqus_pL9YUIJiZh</username>
+</author>
+<thread dsq:id="6397081333" />
+</post>
+<post dsq:id="3879249461">
+<id />
+<message><![CDATA[<p>HELLLO</p>]]></message>
+<createdAt>2018-04-30T13:17:48Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Vishnuprasad Venugopal</name>
+<isAnonymous>false</isAnonymous>
+<username>vishnuprasadvenugopal</username>
+</author>
+<thread dsq:id="6397081333" />
+<parent dsq:id="3879247919" />
+</post>
+<post dsq:id="5997972575">
+<id />
+<message><![CDATA[<p>I have some question, <br>- is it require for the server supporting HTTP/2 protocol when we enabling this keep alive configuration ?<br>- How can we make sure if the traffic is balance between the member / origin address of the domain ?. Let say we have service discovery and there is 3 members active. When we doing keep alive connection which mean we will always connected to the 1 of the member right as persistent connection.</p>]]></message>
+<createdAt>2022-09-28T05:22:31Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Nedya Amrih Prakasa</name>
+<isAnonymous>false</isAnonymous>
+<username>nedya_amrih_prakasa</username>
+</author>
+<thread dsq:id="8017087495" />
+</post>
+<post dsq:id="5997993322">
+<id />
+<message><![CDATA[<p>1. No HTTP/2 is not needed. As keep alive keeps the TCP connection alive.</p><p>2. Yes the connection will be persistent with one of the member. But usually service members are behind some kind of load balancer and we can configure at that end how long a particular connection should be alive.</p>]]></message>
+<createdAt>2022-09-28T06:21:46Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Raxx Shetty</name>
+<isAnonymous>false</isAnonymous>
+<username>raxxshetty</username>
+</author>
+<thread dsq:id="8017087495" />
+<parent dsq:id="5997972575" />
+</post>
+<post dsq:id="6010584366">
+<id />
+<message><![CDATA[<p>If a https connection that is configured to be keep alive connection. I try calling the https URL by opening a connection and closing it in a loop for 3 times.<br>I observe client port(http client) changes for every connection.</p><p>My understanding is as the connection is configured to be keep alive should it not use same client port? <br>Am I missing anything?</p>]]></message>
+<createdAt>2022-10-12T17:13:32Z</createdAt>
+<isDeleted>false</isDeleted>
+<isSpam>false</isSpam>
+<author>
+<name>Ashwin </name>
+<isAnonymous>true</isAnonymous>
+</author>
+<thread dsq:id="8017087495" />
+</post>
+</disqus>

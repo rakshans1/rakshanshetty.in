@@ -49,7 +49,22 @@ export const defaultContentPageLayout: PageLayout = {
       }),
     ),
   ],
-  afterBody: [CustomComponent.PrevNextNav(), CustomComponent.DisqusComments()],
+  afterBody: [
+    CustomComponent.PrevNextNav(),
+    Component.Comments({
+      provider: "giscus",
+      options: {
+        repo: "rakshans1/rakshanshetty.in",
+        repoId: "MDEwOlJlcG9zaXRvcnk3MjIyMzY3NA==",
+        category: "Announcements",
+        categoryId: "DIC_kwDOBE4Lus4CxDKT",
+        mapping: "pathname",
+        strict: false,
+        reactionsEnabled: true,
+        inputPosition: "bottom",
+      },
+    }),
+  ],
 };
 
 // Layout for homepage and tag archive pages
