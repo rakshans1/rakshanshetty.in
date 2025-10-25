@@ -25,6 +25,29 @@ const parseObsidianImage = (imageField: string | undefined): string | undefined 
   return imageField;
 };
 
+// Helper function to convert date to ISO 8601 format with timezone
+const formatDateToISO = (dateString: string | undefined): string | undefined => {
+  if (!dateString) return undefined;
+
+  // If already in ISO format with timezone, return as-is
+  if (dateString.includes('T') && (dateString.includes('Z') || dateString.includes('+'))) {
+    return dateString;
+  }
+
+  // Parse YYYY-MM-DD format and convert to ISO 8601 with UTC timezone
+  const dateMatch = dateString.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (dateMatch) {
+    return `${dateString}T00:00:00Z`;
+  }
+
+  // If it's a full datetime without timezone, add UTC
+  if (dateString.includes('T') && !dateString.includes('Z') && !dateString.includes('+')) {
+    return `${dateString}Z`;
+  }
+
+  return dateString;
+};
+
 export default (() => {
   const LDMeta: QuartzComponent = ({ cfg, fileData, allFiles, ctx }: QuartzComponentProps) => {
     const titleSuffix = cfg.pageTitleSuffix ?? "";
@@ -95,9 +118,10 @@ export default (() => {
           headline: title,
           description: description,
           image: ogImage,
-          datePublished: fileData.frontmatter?.date,
-          dateModified:
-            fileData.frontmatter?.modified || fileData.frontmatter?.date,
+          datePublished: formatDateToISO(fileData.frontmatter?.date),
+          dateModified: formatDateToISO(
+            fileData.frontmatter?.modified || fileData.frontmatter?.date
+          ),
           author: personSchema,
           publisher: {
             "@type": "Organization",
