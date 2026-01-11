@@ -1,5 +1,5 @@
 import { i18n } from "../../quartz/i18n";
-import { joinSegments, resolveRelative, simplifySlug, slugifyFilePath } from "../../quartz/util/path";
+import { joinSegments, resolveRelative, simplifySlug } from "../../quartz/util/path";
 import {
   QuartzComponent,
   QuartzComponentConstructor,
@@ -7,23 +7,7 @@ import {
 } from "../../quartz/components/types";
 import { unescapeHTML } from "../../quartz/util/escape";
 import { trieFromAllFiles } from "../../quartz/util/ctx";
-
-// Helper function to parse Obsidian image syntax from frontmatter
-const parseObsidianImage = (imageField: string | undefined): string | undefined => {
-  if (!imageField) return undefined;
-
-  // Match: ![[filename.png]] or ![[filename.png|alt text]] or [[filename.png]]
-  const wikilinkMatch = imageField.match(/^!?\[\[([^\[\]\|]+)(\|[^\]]+)?\]\]$/);
-
-  if (wikilinkMatch) {
-    const filename = wikilinkMatch[1].trim();
-    // Slugify the path to match how Quartz processes it
-    return slugifyFilePath(filename as any);
-  }
-
-  // If it's already a URL or plain path, return as-is
-  return imageField;
-};
+import { parseObsidianImage } from "../utils/path";
 
 // Helper function to convert date to ISO 8601 format with timezone
 const formatDateToISO = (dateString: string | undefined): string | undefined => {

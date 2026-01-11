@@ -1,24 +1,6 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../../quartz/components/types";
-import { slugifyFilePath } from "../../quartz/util/path";
 import style from "./styles/coverImage.scss";
-
-// Helper function to parse Obsidian image syntax from frontmatter
-// Reused from LDMeta.tsx implementation
-const parseObsidianImage = (imageField: string | undefined): string | undefined => {
-  if (!imageField) return undefined;
-
-  // Match: ![[filename.png]] or ![[filename.png|alt text]] or [[filename.png]]
-  const wikilinkMatch = imageField.match(/^!?\[\[([^\[\]\|]+)(\|[^\]]+)?\]\]$/);
-
-  if (wikilinkMatch) {
-    const filename = wikilinkMatch[1].trim();
-    // Slugify the path to match how Quartz processes it
-    return slugifyFilePath(filename as any);
-  }
-
-  // If it's already a URL or plain path, return as-is
-  return imageField;
-};
+import { parseObsidianImage } from "../utils/path";
 
 const CoverImage: QuartzComponent = ({ cfg, fileData }: QuartzComponentProps) => {
   // Get cover image from frontmatter

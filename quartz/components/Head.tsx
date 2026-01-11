@@ -5,6 +5,7 @@ import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { unescapeHTML } from "../util/escape"
 import { CustomOgImagesEmitterName } from "../plugins/emitters/ogImage"
+import { parseObsidianImage } from "../../quartz-custom/utils/path"
 export default (() => {
   const Head: QuartzComponent = ({
     cfg,
@@ -36,6 +37,24 @@ export default (() => {
     )
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
 
+    // Parse and resolve OG image from frontmatter
+    // socialImage is coalesced from socialImage/image/cover by frontmatter transformer
+    const parsedImagePath = parseObsidianImage(fileData.frontmatter?.socialImage)
+    let ogImage = ogImageDefaultPath
+    if (parsedImagePath) {
+      if (parsedImagePath.startsWith('http')) {
+        // Already an absolute URL
+        ogImage = parsedImagePath
+      } else {
+        // Construct path: images are in assets/ directory alongside the markdown file
+        // Get the directory part of the slug (e.g., "blog" from "blog/post-name")
+        const slugParts = fileData.slug!.split('/')
+        const directory = slugParts.length > 1 ? slugParts.slice(0, -1).join('/') : ''
+        const imagePath = directory ? `${directory}/assets/${parsedImagePath}` : `assets/${parsedImagePath}`
+        ogImage = `https://${cfg.baseUrl}/${imagePath}`
+      }
+    }
+
     return (
       <head>
         <title>{title}</title>
@@ -64,12 +83,12 @@ export default (() => {
 
         {!usesCustomOgImage && (
           <>
-            <meta property="og:image" content={ogImageDefaultPath} />
-            <meta property="og:image:url" content={ogImageDefaultPath} />
-            <meta name="twitter:image" content={ogImageDefaultPath} />
+            <meta property="og:image" content={ogImage} />
+            <meta property="og:image:url" content={ogImage} />
+            <meta name="twitter:image" content={ogImage} />
             <meta
               property="og:image:type"
-              content={`image/${getFileExtension(ogImageDefaultPath) ?? "png"}`}
+              content={`image/${getFileExtension(ogImage) ?? "png"}`}
             />
           </>
         )}
